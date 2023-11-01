@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ExportData;
+use Illuminate\Support\Collection;
+// use Maatwebsite\Excel;
 
 class SmecMailController extends Controller
 {
@@ -104,7 +108,7 @@ class SmecMailController extends Controller
             ORDER BY SQ_SALES,SQ_DATE
             		)A WHERE SALES_EMAIL = '" . $list_email->sales_email . "' AND SALES_CC = '" . $list_email->sales_cc . "'
                 ");
-            //         $data = DB::connection('SMEC')->select("
+            // $data = DB::connection('SMEC')->select("
             //     SELECT * FROM(SELECT 
             // SQ_NO,
             // SQ_DATE,
@@ -122,16 +126,35 @@ class SmecMailController extends Controller
             //         )A WHERE SALES_EMAIL = '" . $list_email->sales_email . "' AND SALES_CC = '" . $list_email->sales_cc . "'
             //     ");
 
-            Mail::send('mail', compact('data'), function ($message) use ($list_email) {
-                $message->to($list_email->sales_email, 'DATA')->subject('REPORT');
-                $parts = explode("; ", $list_email->sales_cc);
-                foreach ($parts as $part_email_cc) {
-                    if ($part_email_cc != $list_email->sales_email) {
-                        $message->to($part_email_cc, 'DATA')->subject('REPORT');
-                    }
-                }
-                $message->from('helpdesk@riyadi.co.id', 'IT');
-            });
+
+            //KALO SEND EMAIL TEMPLATE PAKE WEB START
+            // Mail::send('mail', compact('data'), function ($message) use ($list_email) {
+            //     $message->to($list_email->sales_email, 'DATA')->subject('REPORT');
+            //     $parts = explode("; ", $list_email->sales_cc);
+            //     foreach ($parts as $part_email_cc) {
+            //         if ($part_email_cc != $list_email->sales_email) {
+            //             $message->to($part_email_cc, 'DATA')->subject('REPORT');
+            //         }
+            //     }
+            //     $message->from('helpdesk@riyadi.co.id', 'IT');
+            // });
+            //KALO SEND EMAIL TEMPLATE PAKE WEB END
+
+            //KALO SEND EMAIL TEMPLATE PAKE EXCEL START
+            // Convert the array to a collection
+            $dataCollection = new Collection($data);
+            // Create a new ExportData instance
+            $exportData = new ExportData($dataCollection);
+            $tempFile = tempnam(sys_get_temp_dir(), 'excel');
+            Excel::store($exportData, $tempFile, 'local', 'XLSX');
+            $excelFile = file_get_contents($tempFile);
+            Mail::to($list_email->sales_email, 'DATA')
+                ->subject('REPORT')
+                ->attachData($excelFile, 'exported_data_' . date("Y-m-d") . '.xlsx');
+
+            // Clean up the temporary file
+            unlink($tempFile);
+            //KALO SEND EMAIL TEMPLATE PAKE EXCEL END
             echo "Basic Email Sent To " . $list_email->sales_email . "<br>And To " . $list_email->sales_cc . "<hr>";
         }
         // foreach ($data as $d) {
