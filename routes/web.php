@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\SmecMailController;
+use App\Http\Controllers\SendMailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('mailtemplate', [MailController::class, 'basic_email']);
-Route::get('sendhtmlemail', [MailController::class, 'html_email']);
+// Route::get('sendhtmlemail', [MailController::class, 'html_email']);
 Route::get('mailtemplatecc', [SmecMailController::class, 'tampilan']);
 Route::get('sendmailcc', [SmecMailController::class, 'kirim']);
