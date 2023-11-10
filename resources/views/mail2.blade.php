@@ -363,6 +363,7 @@
             </tr>
         @endforeach
         <!-- END RPM -->
+        <!-- START Kumulatif tahun ini -->
         <tr>
             
             <td colspan="2">Total Cumulatif <?=date('Y')?></td>
@@ -380,6 +381,8 @@
             <td>{{ number_format($total_nov, 2, '.', ',') }}</td>
             <td>{{ number_format($total_dec, 2, '.', ',') }}</td>
         </tr>
+        <!-- END Kumulatif tahun ini -->
+        
     </table>
 </body>
 

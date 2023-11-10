@@ -19,7 +19,7 @@ use App\Http\Controllers\SendMailController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('mailtemplate', [MailController::class, 'basic_email']);
-// Route::get('sendhtmlemail', [MailController::class, 'html_email']);
+Route::get('mailtemplate', [MailController::class, 'index']);
+Route::get('sendhtmlemail',[SendMailController::class, 'index']);
 Route::get('mailtemplatecc', [SmecMailController::class, 'tampilan']);
 Route::get('sendmailcc', [SmecMailController::class, 'kirim']);
