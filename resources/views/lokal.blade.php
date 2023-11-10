@@ -24,6 +24,7 @@
             <td rowspan="2">BRAND</td>
             <td rowspan="2">TOTAL {{ $year_old }}</td>
             <td rowspan="2">TOTAL {{ $year_now }}</td>
+            <td rowspan="2">CHANGE (%)</td>
             <?php
             for($i=1;$i<=12;$i++){
                 $monthName = date('F', mktime(0, 0, 0, $i, 1));
@@ -82,39 +83,42 @@
                 <td>
                     <?php
                     $total_year_old = $total_year_old + $d->total_old;
-                    echo $d->total_old;
+                    echo number_format($d->total_old, 2, '.', ',');
                     ?>
                 </td>
                 <td>
                     <?php
                     $total_year_new = $total_year_new + $d->total_new;
-                    echo $d->total_new;
+                    echo number_format($d->total_new, 2, '.', ',');
                     ?>
                 </td>
-                <td>{{ $d->jan_old }}</td>
-                <td>{{ $d->jan_new }}</td>
-                <td>{{ $d->feb_old }}</td>
-                <td>{{ $d->feb_new }}</td>
-                <td>{{ $d->mar_old }}</td>
-                <td>{{ $d->mar_new }}</td>
-                <td>{{ $d->apr_old }}</td>
-                <td>{{ $d->apr_new }}</td>
-                <td>{{ $d->may_old }}</td>
-                <td>{{ $d->may_new }}</td>
-                <td>{{ $d->jun_old }}</td>
-                <td>{{ $d->jun_new }}</td>
-                <td>{{ $d->jul_old }}</td>
-                <td>{{ $d->jul_new }}</td>
-                <td>{{ $d->aug_old }}</td>
-                <td>{{ $d->aug_new }}</td>
-                <td>{{ $d->sep_old }}</td>
-                <td>{{ $d->sep_new }}</td>
-                <td>{{ $d->oct_old }}</td>
-                <td>{{ $d->oct_new }}</td>
-                <td>{{ $d->nov_old }}</td>
-                <td>{{ $d->nov_new }}</td>
-                <td>{{ $d->dec_old }}</td>
-                <td>{{ $d->dec_new }}</td>
+                <td>
+                    <?=($d->total_old != 0)? number_format($d->total_new/$d->total_old*100, 2, '.', ',') : 0 ?>
+            </td>
+                <td>{{ number_format($d->jan_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jan_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_new, 2, '.', ',') }}</td>
             </tr>
             <?php } ?>
         @endforeach
@@ -139,39 +143,42 @@
                 <td>
                     <?php
                     $total_year_old = $total_year_old + $d->total_old;
-                    echo $d->total_old;
+                    echo number_format($d->total_old, 2, '.', ',');
                     ?>
                 </td>
                 <td>
                     <?php
                     $total_year_new = $total_year_new + $d->total_new;
-                    echo $d->total_new;
+                    echo number_format($d->total_new, 2, '.', ',');
                     ?>
                 </td>
-                <td>{{ $d->jan_old }}</td>
-                <td>{{ $d->jan_new }}</td>
-                <td>{{ $d->feb_old }}</td>
-                <td>{{ $d->feb_new }}</td>
-                <td>{{ $d->mar_old }}</td>
-                <td>{{ $d->mar_new }}</td>
-                <td>{{ $d->apr_old }}</td>
-                <td>{{ $d->apr_new }}</td>
-                <td>{{ $d->may_old }}</td>
-                <td>{{ $d->may_new }}</td>
-                <td>{{ $d->jun_old }}</td>
-                <td>{{ $d->jun_new }}</td>
-                <td>{{ $d->jul_old }}</td>
-                <td>{{ $d->jul_new }}</td>
-                <td>{{ $d->aug_old }}</td>
-                <td>{{ $d->aug_new }}</td>
-                <td>{{ $d->sep_old }}</td>
-                <td>{{ $d->sep_new }}</td>
-                <td>{{ $d->oct_old }}</td>
-                <td>{{ $d->oct_new }}</td>
-                <td>{{ $d->nov_old }}</td>
-                <td>{{ $d->nov_new }}</td>
-                <td>{{ $d->dec_old }}</td>
-                <td>{{ $d->dec_new }}</td>
+                <td>
+                    <?=($d->total_old != 0)? number_format($d->total_new/$d->total_old*100, 2, '.', ',') : 0 ?>
+            </td>
+                <td>{{ number_format($d->jan_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jan_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_new, 2, '.', ',') }}</td>
             </tr>
             <?php } ?>
         @endforeach
@@ -196,39 +203,42 @@
                 <td>
                     <?php
                     $total_year_old = $total_year_old + $d->total_old;
-                    echo $d->total_old;
+                    echo number_format($d->total_old, 2, '.', ',');
                     ?>
                 </td>
                 <td>
                     <?php
                     $total_year_new = $total_year_new + $d->total_new;
-                    echo $d->total_new;
+                    echo number_format($d->total_new, 2, '.', ',');
                     ?>
                 </td>
-                <td>{{ $d->jan_old }}</td>
-                <td>{{ $d->jan_new }}</td>
-                <td>{{ $d->feb_old }}</td>
-                <td>{{ $d->feb_new }}</td>
-                <td>{{ $d->mar_old }}</td>
-                <td>{{ $d->mar_new }}</td>
-                <td>{{ $d->apr_old }}</td>
-                <td>{{ $d->apr_new }}</td>
-                <td>{{ $d->may_old }}</td>
-                <td>{{ $d->may_new }}</td>
-                <td>{{ $d->jun_old }}</td>
-                <td>{{ $d->jun_new }}</td>
-                <td>{{ $d->jul_old }}</td>
-                <td>{{ $d->jul_new }}</td>
-                <td>{{ $d->aug_old }}</td>
-                <td>{{ $d->aug_new }}</td>
-                <td>{{ $d->sep_old }}</td>
-                <td>{{ $d->sep_new }}</td>
-                <td>{{ $d->oct_old }}</td>
-                <td>{{ $d->oct_new }}</td>
-                <td>{{ $d->nov_old }}</td>
-                <td>{{ $d->nov_new }}</td>
-                <td>{{ $d->dec_old }}</td>
-                <td>{{ $d->dec_new }}</td>
+                <td>
+                    <?=($d->total_old != 0)? number_format($d->total_new/$d->total_old*100, 2, '.', ',') : 0 ?>
+            </td>
+                <td>{{ number_format($d->jan_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jan_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_new, 2, '.', ',') }}</td>
             </tr>
             <?php } ?>
         @endforeach
@@ -253,39 +263,42 @@
                 <td>
                     <?php
                     $total_year_old = $total_year_old + $d->total_old;
-                    echo $d->total_old;
+                    echo number_format($d->total_old, 2, '.', ',');
                     ?>
                 </td>
                 <td>
                     <?php
                     $total_year_new = $total_year_new + $d->total_new;
-                    echo $d->total_new;
+                    echo number_format($d->total_new, 2, '.', ',');
                     ?>
                 </td>
-                <td>{{ $d->jan_old }}</td>
-                <td>{{ $d->jan_new }}</td>
-                <td>{{ $d->feb_old }}</td>
-                <td>{{ $d->feb_new }}</td>
-                <td>{{ $d->mar_old }}</td>
-                <td>{{ $d->mar_new }}</td>
-                <td>{{ $d->apr_old }}</td>
-                <td>{{ $d->apr_new }}</td>
-                <td>{{ $d->may_old }}</td>
-                <td>{{ $d->may_new }}</td>
-                <td>{{ $d->jun_old }}</td>
-                <td>{{ $d->jun_new }}</td>
-                <td>{{ $d->jul_old }}</td>
-                <td>{{ $d->jul_new }}</td>
-                <td>{{ $d->aug_old }}</td>
-                <td>{{ $d->aug_new }}</td>
-                <td>{{ $d->sep_old }}</td>
-                <td>{{ $d->sep_new }}</td>
-                <td>{{ $d->oct_old }}</td>
-                <td>{{ $d->oct_new }}</td>
-                <td>{{ $d->nov_old }}</td>
-                <td>{{ $d->nov_new }}</td>
-                <td>{{ $d->dec_old }}</td>
-                <td>{{ $d->dec_new }}</td>
+                <td>
+                    <?=($d->total_old != 0)? number_format($d->total_new/$d->total_old*100, 2, '.', ',') : 0 ?>
+            </td>
+                <td>{{ number_format($d->jan_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jan_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_new, 2, '.', ',') }}</td>
             </tr>
             <?php } ?>
         @endforeach
@@ -310,47 +323,51 @@
                 <td>
                     <?php
                     $total_year_old = $total_year_old + $d->total_old;
-                    echo $d->total_old;
+                    echo number_format($d->total_old, 2, '.', ',');
                     ?>
                 </td>
                 <td>
                     <?php
                     $total_year_new = $total_year_new + $d->total_new;
-                    echo $d->total_new;
+                    echo number_format($d->total_new, 2, '.', ',');
                     ?>
                 </td>
-                <td>{{ $d->jan_old }}</td>
-                <td>{{ $d->jan_new }}</td>
-                <td>{{ $d->feb_old }}</td>
-                <td>{{ $d->feb_new }}</td>
-                <td>{{ $d->mar_old }}</td>
-                <td>{{ $d->mar_new }}</td>
-                <td>{{ $d->apr_old }}</td>
-                <td>{{ $d->apr_new }}</td>
-                <td>{{ $d->may_old }}</td>
-                <td>{{ $d->may_new }}</td>
-                <td>{{ $d->jun_old }}</td>
-                <td>{{ $d->jun_new }}</td>
-                <td>{{ $d->jul_old }}</td>
-                <td>{{ $d->jul_new }}</td>
-                <td>{{ $d->aug_old }}</td>
-                <td>{{ $d->aug_new }}</td>
-                <td>{{ $d->sep_old }}</td>
-                <td>{{ $d->sep_new }}</td>
-                <td>{{ $d->oct_old }}</td>
-                <td>{{ $d->oct_new }}</td>
-                <td>{{ $d->nov_old }}</td>
-                <td>{{ $d->nov_new }}</td>
-                <td>{{ $d->dec_old }}</td>
-                <td>{{ $d->dec_new }}</td>
+                <td>
+                    <?=($d->total_old != 0)? number_format($d->total_new/$d->total_old*100, 2, '.', ',') : 0 ?>
+            </td>
+                <td>{{ number_format($d->jan_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jan_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->feb_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->mar_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->apr_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->may_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jun_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->jul_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->aug_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->sep_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->oct_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->nov_new, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_old, 2, '.', ',') }}</td>
+                <td>{{ number_format($d->dec_new, 2, '.', ',') }}</td>
             </tr>
             <?php } ?>
         @endforeach
         <!-- END RPM -->
         <tr>
             <td colspan="2">CUMULATIVE</td>
-            <td>{{$total_year_old}}</td>
-            <td>{{$total_year_new}}</td>
+            <td>{{number_format($total_year_old, 2, '.', ',')}}</td>
+            <td>{{number_format($total_year_new, 2, '.', ',')}}</td>
+            <td><?=($total_year_old != 0)? number_format($total_year_new/$total_year_old*100, 2, '.', ',') : 0 ?></td>
             <td></td>
             <td></td>
             <td></td>
