@@ -40,9 +40,9 @@ class SendMailController extends Controller
                 $message
                     ->to("opayabumanyu@gmail.com", "DATA")
                     ->subject("REPORT");
-                // $message
-                //     ->to("arif@smcindonesia.com", "DATA")
-                //     ->subject("REPORT");
+                $message
+                    ->to("arif@smcindonesia.com", "DATA")
+                    ->subject("REPORT");
                 $message
                     ->to("naufal@smcindonesia.com", "DATA")
                     ->subject("REPORT");

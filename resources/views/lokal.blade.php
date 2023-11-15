@@ -16,6 +16,42 @@
 <body>
     <table border="1">
         <?php
+        $totalsmc_jan = 0;
+        $totalrjb_jan = 0;
+        $totalrpm_jan = 0;
+        $totalsmc_feb = 0;
+        $totalrjb_feb = 0;
+        $totalrpm_feb = 0;
+        $totalsmc_mar = 0;
+        $totalrjb_mar = 0;
+        $totalrpm_mar = 0;
+        $totalsmc_apr = 0;
+        $totalrjb_apr = 0;
+        $totalrpm_apr = 0;
+        $totalsmc_may = 0;
+        $totalrjb_may = 0;
+        $totalrpm_may = 0;
+        $totalsmc_jun = 0;
+        $totalrjb_jun = 0;
+        $totalrpm_jun = 0;
+        $totalsmc_jul = 0;
+        $totalrjb_jul = 0;
+        $totalrpm_jul = 0;
+        $totalsmc_aug = 0;
+        $totalrjb_aug = 0;
+        $totalrpm_aug = 0;
+        $totalsmc_sep = 0;
+        $totalrjb_sep = 0;
+        $totalrpm_sep = 0;
+        $totalsmc_oct = 0;
+        $totalrjb_oct = 0;
+        $totalrpm_oct = 0;
+        $totalsmc_nov = 0;
+        $totalrjb_nov = 0;
+        $totalrpm_nov = 0;
+        $totalsmc_dec = 0;
+        $totalrjb_dec = 0;
+        $totalrpm_dec = 0;
         $year_now = date('Y');
         $year_old = $year_now - 1;
         ?>
@@ -781,7 +817,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                 echo 'DATA ' . strtoupper($currentDate->format('F'));
                 ?>
             </td>
-            <td>% TERHADAP TOTAL BULAN<br>OKTOBER <?= strtoupper($currentDate->format('F')) ?></td>
+            <td>% TERHADAP TOTAL <br>BULAN <?= strtoupper($currentDate->format('F')) ?></td>
         </tr>
         @foreach ($data_brand as $data)
             <tr>
@@ -893,31 +929,101 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
         @endforeach
     </table>
     <hr>
-    <!-- START TABLE HANYA BRAND TERTENTU -->
     <table border="1">
         <tr>
             <td>MONTH</td>
             <td>SMC</td>
             <td>RJB</td>
             <td>RPM</td>
+            <td>NEW PRODUCT TOTAL</td>
         </tr>
-        <?php
-        
-        
-            for($i=1;$i<=12;$i++){
-                
-                $monthName = date('F', mktime(0, 0, 0, $i, 1));
-            ?>
         <tr>
-            <td><?= strtoupper($monthName) ?></td>
-            <td>
-            </td>
-            <td></td>
-            <td></td>
+            <td>JANUARY</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_jan, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_jan, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_jan, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_jan + $totalrjb_jan + $totalrpm_jan,2,'.',',')}}</td>
         </tr>
-        <?php } ?>
+        <tr>
+            <td>FEBRUARY</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_feb, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_feb, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_feb, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_feb + $totalrjb_feb + $totalrpm_feb,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>MARCH</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_mar, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_mar, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_mar, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_mar + $totalrjb_mar + $totalrpm_mar,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>APRIL</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_apr, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_apr, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_apr, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_apr + $totalrjb_apr + $totalrpm_apr,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>MAY</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_may, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_may, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_may, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_may + $totalrjb_may + $totalrpm_may,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>JUNE</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_jun, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_jun, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_jun, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_jun + $totalrjb_jun + $totalrpm_jun,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>JULY</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_jul, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_jul, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_jul, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_jul + $totalrjb_jul + $totalrpm_jul,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>AUGUST</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_aug, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_aug, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_aug, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_aug + $totalrjb_aug + $totalrpm_aug,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>SEPTEMBER</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_sep, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_sep, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_sep, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_sep + $totalrjb_sep + $totalrpm_sep,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>OCTOBER</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_oct, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_oct, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_oct, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_oct + $totalrjb_oct + $totalrpm_oct,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>NOVEMBER</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_nov, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_nov, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_nov, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_nov + $totalrjb_nov + $totalrpm_nov,2,'.',',')}}</td>
+        </tr>
+        <tr>
+            <td>DECEMBER</td>
+            <td style="text-align:right;">{{ number_format($totalsmc_dec, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrjb_dec, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{ number_format($totalrpm_dec, 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format($totalsmc_dec + $totalrjb_dec + $totalrpm_dec,2,'.',',')}}</td>
+        </tr>
+
     </table>
-    <!-- END TABLE HANYA BRAND TERTENTU -->
+
 </body>
 
 </html>
