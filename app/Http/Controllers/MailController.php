@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
-use Maatwebsite\Excel\Writers\HtmlWriter;
 
 class MailController extends Controller
 {
@@ -30,7 +29,8 @@ class MailController extends Controller
         //HITUNG TOTAL PER SMC, RJB, RPM BUAT TABLE PALING BAWAH
         
         return view(
-            "lokal",
+            // "lokal",
+            "lokal2",
             // ,compact("ptsmcb")
             compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm")
         );

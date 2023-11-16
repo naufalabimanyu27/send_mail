@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
-use App\Http\Controllers\SmecMailController;
 use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\SmecMailController;
 
 /*
 |--------------------------------------------------------------------------

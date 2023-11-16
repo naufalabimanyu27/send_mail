@@ -33,20 +33,46 @@ class SendMailController extends Controller
         );
         // END PENGIRIMAN DATA -1 BULAN
 
+        // Mail::send(
+        //     "lokal",
+        //     compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm"),
+        //     function ($message) {
+        //         $message
+        //             ->to("jap.spencer@gmail.com", "DATA")
+        //             ->subject("REPORT");
+        //         $message
+        //             ->to("abrahambudiman@gmail.com", "DATA")
+        //             ->subject("REPORT");
+        //         $message
+        //             ->to("yohanjnt@riyadi.co.id", "DATA")
+        //             ->subject("REPORT");
+        //         $message->from("helpdesk@riyadi.co.id", "SYSTEM");
+        //     }
+        // );
+        // Mail::send(
+        //     "lokal",
+        //     compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm"),
+        //     function ($message) {
+        //         $message
+        //             ->to("Lisadaryono@gmail.com", "DATA")
+        //             ->subject("REPORT");
+        //         $message->from("helpdesk@riyadi.co.id", "SYSTEM");
+        //     }
+        // );
         Mail::send(
             "lokal",
             compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm"),
             function ($message) {
+                // $message
+                //     ->to("arif@smcindonesia.com", "DATA")
+                //     ->subject("REPORT");
                 $message
-                    ->to("opayabumanyu@gmail.com", "DATA")
+                    ->to("naufal@smcindonesia.com", "LORD BAHAMUT")
                     ->subject("REPORT");
                 $message
-                    ->to("arif@smcindonesia.com", "DATA")
+                    ->to("gamenaufal27@gmail.com", "LORD BAHAMUT")
                     ->subject("REPORT");
-                $message
-                    ->to("naufal@smcindonesia.com", "DATA")
-                    ->subject("REPORT");
-                $message->from("helpdesk@riyadi.co.id", "IT");
+                $message->from("helpdesk@riyadi.co.id", "SYSTEM");
             }
         );
         echo "Basic Email Sent. Check your inbox.";
