@@ -154,7 +154,7 @@
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format((($d->total_new / $d->total_old)-1) * 100, 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -207,7 +207,7 @@ $totalsmc_sep = $totalsmc_sep + $d->sep_new;
 $totalsmc_oct = $totalsmc_oct + $d->oct_new;
 $totalsmc_nov = $totalsmc_nov + $d->nov_new;
 $totalsmc_dec = $totalsmc_dec + $d->dec_new;
-        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OTK") {
+        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OKE") {
             $totalrjb_jan = $totalrjb_jan + $d->jan_new;
 $totalrjb_feb = $totalrjb_feb + $d->feb_new;
 $totalrjb_mar = $totalrjb_mar + $d->mar_new;
@@ -267,7 +267,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format((($d->total_new / $d->total_old)-1) * 100, 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -320,7 +320,7 @@ $totalsmc_sep = $totalsmc_sep + $d->sep_new;
 $totalsmc_oct = $totalsmc_oct + $d->oct_new;
 $totalsmc_nov = $totalsmc_nov + $d->nov_new;
 $totalsmc_dec = $totalsmc_dec + $d->dec_new;
-        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OTK") {
+        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OKE") {
             $totalrjb_jan = $totalrjb_jan + $d->jan_new;
 $totalrjb_feb = $totalrjb_feb + $d->feb_new;
 $totalrjb_mar = $totalrjb_mar + $d->mar_new;
@@ -381,7 +381,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format((($d->total_new / $d->total_old)-1) * 100, 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -434,7 +434,7 @@ $totalsmc_sep = $totalsmc_sep + $d->sep_new;
 $totalsmc_oct = $totalsmc_oct + $d->oct_new;
 $totalsmc_nov = $totalsmc_nov + $d->nov_new;
 $totalsmc_dec = $totalsmc_dec + $d->dec_new;
-        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OTK") {
+        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OKE") {
             $totalrjb_jan = $totalrjb_jan + $d->jan_new;
 $totalrjb_feb = $totalrjb_feb + $d->feb_new;
 $totalrjb_mar = $totalrjb_mar + $d->mar_new;
@@ -495,7 +495,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format((($d->total_new / $d->total_old)-1) * 100, 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -548,7 +548,7 @@ $totalsmc_sep = $totalsmc_sep + $d->sep_new;
 $totalsmc_oct = $totalsmc_oct + $d->oct_new;
 $totalsmc_nov = $totalsmc_nov + $d->nov_new;
 $totalsmc_dec = $totalsmc_dec + $d->dec_new;
-        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OTK") {
+        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OKE") {
             $totalrjb_jan = $totalrjb_jan + $d->jan_new;
 $totalrjb_feb = $totalrjb_feb + $d->feb_new;
 $totalrjb_mar = $totalrjb_mar + $d->mar_new;
@@ -609,7 +609,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format((($d->total_new / $d->total_old)-1) * 100, 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -662,7 +662,7 @@ $totalsmc_sep = $totalsmc_sep + $d->sep_new;
 $totalsmc_oct = $totalsmc_oct + $d->oct_new;
 $totalsmc_nov = $totalsmc_nov + $d->nov_new;
 $totalsmc_dec = $totalsmc_dec + $d->dec_new;
-        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OTK") {
+        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OKE") {
             $totalrjb_jan = $totalrjb_jan + $d->jan_new;
 $totalrjb_feb = $totalrjb_feb + $d->feb_new;
 $totalrjb_mar = $totalrjb_mar + $d->mar_new;
@@ -698,7 +698,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             <td style="text-align:right;">{{ number_format($total_year_old, 2, '.', ',') }}</td>
             <td style="text-align:right;">{{ number_format($total_year_new, 2, '.', ',') }}</td>
             <td style="text-align:right;">
-                <?= $total_year_old != 0 ? number_format(($total_year_new / $total_year_old) * 100, 2, '.', ',') : 0 ?>
+                <?= $total_year_old != 0 ? number_format((($total_year_new / $total_year_old)-1) * 100, 2, '.', ',') : 0 ?>
             </td>
             <td style="text-align:right;">{{ number_format($total_jan_old, 2, '.', ',') }}</td>
             <td style="text-align:right;">{{ number_format($total_jan_new, 2, '.', ',') }}</td>
@@ -820,11 +820,41 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             <td>% TERHADAP TOTAL <br>BULAN <?= strtoupper($currentDate->format('F')) ?></td>
         </tr>
         @foreach ($data_brand as $data)
+        <?php $checkifmonthnull = "z";
+       if ($currentDate->format("m") == "01" and $data->jan_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "02" and $data->feb_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "03" and $data->mar_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "04" and $data->apr_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "05" and $data->may_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "06" and $data->jun_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "07" and $data->jul_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "08" and $data->aug_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "09" and $data->sep_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "10" and $data->oct_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "11" and $data->nov_new == 0) {
+        $checkifmonthnull = "a";
+    } elseif ($currentDate->format("m") == "12" and $data->dec_new == 0) {
+        $checkifmonthnull = "a";
+    } 
+        ?>
+        @if($checkifmonthnull != "a")
             <tr>
                 <!-- <td>{{ $data->erp }}</td> -->
                 <td>{{ $data->brand }}</td>
-                <td style="text-align:right;"><?php if ($currentDate->format('m') == '01') {
-                    echo number_format($data->jan_new, 2, '.', ',');
+                <td style="text-align:right;">
+                <?php 
+                if ($currentDate->format('m') == '01') {
+                   echo number_format($data->jan_new, 2, '.', ',');
                 } elseif ($currentDate->format('m') == '02') {
                     echo number_format($data->feb_new, 2, '.', ',');
                 } elseif ($currentDate->format('m') == '03') {
@@ -849,83 +879,82 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     echo number_format($data->dec_new, 2, '.', ',');
                 }
                 ?></td>
-                <td style="text-align:right;">
                     <?php if ($currentDate->format('m') == '01') {
                         if ($data->jan_new != 0) {
-                            echo number_format(($data->jan_new / $total_jan_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->jan_new / $total_jan_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '02') {
                         if ($data->feb_new != 0) {
-                            echo number_format(($data->feb_new / $total_feb_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->feb_new / $total_feb_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '03') {
                         if ($data->mar_new != 0) {
-                            echo number_format(($data->mar_new / $total_mar_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->mar_new / $total_mar_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '04') {
                         if ($data->apr_new != 0) {
-                            echo number_format(($data->apr_new / $total_apr_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->apr_new / $total_apr_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '05') {
                         if ($data->may_new != 0) {
-                            echo number_format(($data->may_new / $total_may_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->may_new / $total_may_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '06') {
                         if ($data->jun_new != 0) {
-                            echo number_format(($data->jun_new / $total_jun_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->jun_new / $total_jun_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '07') {
                         if ($data->jul_new != 0) {
-                            echo number_format(($data->jul_new / $total_jul_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->jul_new / $total_jul_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '08') {
                         if ($data->aug_new != 0) {
-                            echo number_format(($data->aug_new / $total_aug_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->aug_new / $total_aug_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '09') {
                         if ($data->sep_new != 0) {
-                            echo number_format(($data->sep_new / $total_sep_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->sep_new / $total_sep_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '10') {
                         if ($data->oct_new != 0) {
-                            echo number_format(($data->oct_new / $total_oct_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->oct_new / $total_oct_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '11') {
                         if ($data->nov_new != 0) {
-                            echo number_format(($data->nov_new / $total_nov_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->nov_new / $total_nov_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '12') {
                         if ($data->dec_new != 0) {
-                            echo number_format(($data->dec_new / $total_dec_new) * 100, 2, '.', ',');
+                            echo '<td style="text-align:right;">'.number_format(($data->dec_new / $total_dec_new) * 100, 2, '.', ',').'</td>';
                         } else {
-                            echo '0';
+                            echo '<td style="text-align:right;">0</td>';
                         }
                     }
                     ?>
-                </td>
             </tr>
+            @endif
         @endforeach
     </table>
     <hr>
