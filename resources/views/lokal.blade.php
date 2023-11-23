@@ -13,8 +13,8 @@
     </style>
 </head>
 
-<body>
-    <table border="1">
+<body onload="exportToExcel()">
+    <table border="1" id="tabel1">
         <?php
         $totalsmc_jan = 0;
         $totalrjb_jan = 0;
@@ -887,7 +887,20 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             $mergedArray[$brand]['oct_new'] += $entry['oct_new'];
             $mergedArray[$brand]['nov_new'] += $entry['nov_new'];
             $mergedArray[$brand]['dec_new'] += $entry['dec_new'];
+            $mergedArray[$brand]['jan_old'] += $entry['jan_old'];
+$mergedArray[$brand]['feb_old'] += $entry['feb_old'];
+$mergedArray[$brand]['mar_old'] += $entry['mar_old'];
+$mergedArray[$brand]['apr_old'] += $entry['apr_old'];
+$mergedArray[$brand]['may_old'] += $entry['may_old'];
+$mergedArray[$brand]['jun_old'] += $entry['jun_old'];
+$mergedArray[$brand]['jul_old'] += $entry['jul_old'];
+$mergedArray[$brand]['aug_old'] += $entry['aug_old'];
+$mergedArray[$brand]['sep_old'] += $entry['sep_old'];
+$mergedArray[$brand]['oct_old'] += $entry['oct_old'];
+$mergedArray[$brand]['nov_old'] += $entry['nov_old'];
+$mergedArray[$brand]['dec_old'] += $entry['dec_old'];
             $mergedArray[$brand]['total_new'] += $entry['total_new'];
+            $mergedArray[$brand]['total_old'] += $entry['total_old'];
         }
     }
     
@@ -926,7 +939,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
     //END PERHITUNGAN BEDA SYSTEM SATU BRAND
     ?>
     <!-- START TABLE ALL BRAND MONTHLY -->
-    <table border="1">
+    <table border="1" id="tabel2">
         <tr>
             <!-- <td>ERP</td> -->
             <td>BRAND</td>
@@ -1077,7 +1090,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
     </table>
     <!-- END TABLE ALL BRAND MONTHLY -->
     <hr>
-    <table border="1">
+    <table border="1" id="tabel3">
         <tr>
             <td>MONTH</td>
             <td>SMC</td>
@@ -1184,27 +1197,21 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
     </table>
     <hr>
     <!-- TABLE ALL BRAND ALL SYSTEM YEARLY -->
-    <table border="1">
-        <tr>
-            <td>BRAND</td>
-            <td>
-                <?php
+    <table border="1" id="tabel4">
+        <?php
                 // Get the current month
                 $Mnow = date('n');
                 // Get the current year
                 $Ynow = date('Y');
                 $Yminone = $Ynow - 1;
-                // Check if the current month is January
-                if ($Mnow == 1) {
-                    // If it's January, echo the previous year
-                    echo 'TOTAL KUMULATIF ' . $Yminone;
-                } else {
-                    // If it's not January, echo the current year
-                    echo 'TOTAL KUMULATIF ' . $Ynow;
-                }
-                ?></td>
+                $Ymintwo = $Ynow - 2;
+                ?>
+        <tr>
+            <td>BRAND</td>
+            <td>TOTAL <?=$Mnow == 1 ? $Ymintwo : $Yminone ?></td>
+            <td>TOTAL <?=$Mnow == 1 ? $Yminone : $Ynow ?></td>
             <td>
-                % TERHADAP TOTAL<br>TAHUN <?= $Mnow == 1 ? $Yminone : $Ynow ?>
+                % CHANGE
             </td>
         </tr>
         
@@ -1218,8 +1225,14 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
     @if ($data->total_new != 0)
     <tr>
         <td>{{$data->brand}}</td>
+        <td style="text-align:right;">{{number_format($data->total_old, 2, '.', ',')}}</td>
         <td style="text-align:right;">{{number_format($data->total_new, 2, '.', ',')}}</td>
-        <td style="text-align:right;">{{ number_format(($data->total_new / $total_year_new * 100), 2, '.', ',') }}</td></tr>
+        @if ($data->total_old != 0)
+        <td style="text-align:right;">{{ number_format((($data->total_new / $data->total_old - 1) * 100), 2, '.', ',') }}</td>
+        @else
+        <td style="text-align:right;">0</td>
+        @endif
+        </tr>
         @endif
     @endforeach
     </table>
@@ -1279,7 +1292,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
         
     });
     ?>
-    <table border="1">
+    <table border="1" id="tabel5">
         <tr>
             <td>SYSTEM</td>
             <td>TOTAL {{date('Y')}}</td>
@@ -1312,6 +1325,38 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
         @endforeach
         
     </table>
+    <!-- table to excel javascript -->
+<script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+<script>
+    function exportToExcel() {
+        // Get HTML content of the tables
+        // var htmlTable1 = document.getElementById('tabel1').outerHTML;
+        // var htmlTable2 = document.getElementById('tabel2').outerHTML;
+        // var htmlTable3 = document.getElementById('tabel3').outerHTML;
+        // var htmlTable4 = document.getElementById('tabel4').outerHTML;
+        // var htmlTable5 = document.getElementById('tabel5').outerHTML;
+
+        // Create a workbook
+        // var wb = XLSX.utils.book_new();
+
+        // Convert HTML content to a worksheet
+        // var ws1 = XLSX.utils.table_to_sheet(document.getElementById('tabel1'));
+        // var ws2 = XLSX.utils.table_to_sheet(document.getElementById('tabel2'));
+        // var ws3 = XLSX.utils.table_to_sheet(document.getElementById('tabel3'));
+        // var ws4 = XLSX.utils.table_to_sheet(document.getElementById('tabel4'));
+        // var ws5 = XLSX.utils.table_to_sheet(document.getElementById('tabel5'));
+
+        // Add worksheets to the workbook
+        // XLSX.utils.book_append_sheet(wb, ws1, 'ALL DATA');
+        // XLSX.utils.book_append_sheet(wb, ws2, '<?="PER BRAND ".date("Ym")?>');
+        // XLSX.utils.book_append_sheet(wb, ws3, 'NEW PRODUCT');
+        // XLSX.utils.book_append_sheet(wb, ws4, '<?="PER BRAND CUM".date("Y")?>');
+        // XLSX.utils.book_append_sheet(wb, ws5, 'PER SYSTEM <?=date("Y")?>');
+
+        // Save the workbook to a file
+        // XLSX.writeFile(wb, 'tables.xlsx');
+    }
+</script>
 </body>
 
 </html>

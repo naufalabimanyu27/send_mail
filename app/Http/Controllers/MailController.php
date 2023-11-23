@@ -32,8 +32,8 @@ class MailController extends Controller
         //HITUNG TOTAL PER SMC, RJB, RPM, RWI BUAT TABLE PALING BAWAH
         
         return view(
-            "lokal",
-            // "lokal2",
+            // "lokal",
+            "lokal2",
             // ,compact("ptsmcb")
             compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi")
         );

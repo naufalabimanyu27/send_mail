@@ -67,13 +67,13 @@ class SendMailController extends Controller
             compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
             function ($message) {
                 $message
-                    ->to("arif@smcindonesia.com", "DATA")
+                    ->to("arif@smcindonesia.com", "ARIF")
                     ->subject("REPORT");
                 $message
-                    ->to("naufal@smcindonesia.com", "TELOR GULUNG")
+                    ->to("naufal@smcindonesia.com", "NAUFAL")
                     ->subject("REPORT");
                 $message
-                    ->to("gamenaufal27@gmail.com", "SOP KECAMBAH")
+                    ->to("gamenaufal27@gmail.com", "NAUFAL JUGA")
                     ->subject("REPORT");
                 $message->from("helpdesk@riyadi.co.id", "SYSTEM");
             }
