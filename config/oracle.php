@@ -55,6 +55,15 @@ return [
         'password'       => 'ERP0231204697B1916LJ',
         'service_name' => 'ORION',
     ],
+    'PTRWI' => [
+        'driver'         => 'oracle',
+        'host'           => '203.153.96.251',
+        'port'           => '1521',
+        'database'       => 'ORION',
+        'username'       => 'PTRWI',
+        'password'       => 'ERP0231204697B1916LJ',
+        'service_name' => 'ORION',
+    ],
     'SMEC' => [
         'driver'         => 'oracle',
         'host'           => '203.153.96.253',

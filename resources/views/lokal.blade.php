@@ -121,7 +121,6 @@
         $total_nov_new = 0;
         $total_dec_old = 0;
         $total_dec_new = 0;
-        
         ?>
         <!-- START SMCB -->
         <?php
@@ -693,6 +692,120 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
         } ?>
         @endforeach
         <!-- END RPM -->
+        <!-- START RWI -->
+        <?php
+        $i = 0;
+        foreach ($ptrwi as $d) {
+            if ($d->total_old != 0 or $d->total_new != 0) {
+                $i++;
+            }
+        }
+        $x = 0;
+        ?>
+        @foreach ($ptrwi as $d)
+            <?php if($d->total_old != 0 or $d->total_new != 0){ ?>
+            <tr style="background-color: bisque;">
+                <?php if($x == 0) {?>
+                <td rowspan="{{ $i }}">{{ $d->erp }}</td>
+                <?php $x++;}?>
+                <td>{{ $d->brand }}</td>
+                <td style="text-align:right;">
+                    <?php
+                    $total_year_old = $total_year_old + $d->total_old;
+                    echo number_format($d->total_old, 2, '.', ',');
+                    ?>
+                </td>
+                <td style="text-align:right;">
+                    <?php
+                    $total_year_new = $total_year_new + $d->total_new;
+                    echo number_format($d->total_new, 2, '.', ',');
+                    ?>
+                </td>
+                <td style="text-align:right;">
+                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) * 100, 2, '.', ',') : 0 ?>
+                </td>
+                <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->feb_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->feb_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->mar_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->mar_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->apr_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->apr_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->may_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->may_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->jun_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->jun_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->jul_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->jul_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->aug_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->aug_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->sep_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->sep_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->oct_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->oct_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->nov_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->nov_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->dec_old, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($d->dec_new, 2, '.', ',') }}</td>
+            </tr>
+            <?php 
+        $total_jan_old=$total_jan_old+$d->jan_old;	$total_jan_new=$total_jan_new+$d->jan_new;
+        $total_feb_old=$total_feb_old+$d->feb_old;	$total_feb_new=$total_feb_new+$d->feb_new;
+        $total_mar_old=$total_mar_old+$d->mar_old;	$total_mar_new=$total_mar_new+$d->mar_new;
+        $total_apr_old=$total_apr_old+$d->apr_old;	$total_apr_new=$total_apr_new+$d->apr_new;
+        $total_may_old=$total_may_old+$d->may_old;	$total_may_new=$total_may_new+$d->may_new;
+        $total_jun_old=$total_jun_old+$d->jun_old;	$total_jun_new=$total_jun_new+$d->jun_new;
+        $total_jul_old=$total_jul_old+$d->jul_old;	$total_jul_new=$total_jul_new+$d->jul_new;
+        $total_aug_old=$total_aug_old+$d->aug_old;	$total_aug_new=$total_aug_new+$d->aug_new;
+        $total_sep_old=$total_sep_old+$d->sep_old;	$total_sep_new=$total_sep_new+$d->sep_new;
+        $total_oct_old=$total_oct_old+$d->oct_old;	$total_oct_new=$total_oct_new+$d->oct_new;
+        $total_nov_old=$total_nov_old+$d->nov_old;	$total_nov_new=$total_nov_new+$d->nov_new;
+        $total_dec_old=$total_dec_old+$d->dec_old;	$total_dec_new=$total_dec_new+$d->dec_new;
+        if($d->brand == "KOF" or $d->brand == "IKO" or $d->brand == "NAB" or $d->brand == "KKT" or $d->brand == "UNP" or $d->brand == "YUK"){
+            $totalsmc_jan = $totalsmc_jan + $d->jan_new;
+$totalsmc_feb = $totalsmc_feb + $d->feb_new;
+$totalsmc_mar = $totalsmc_mar + $d->mar_new;
+$totalsmc_apr = $totalsmc_apr + $d->apr_new;
+$totalsmc_may = $totalsmc_may + $d->may_new;
+$totalsmc_jun = $totalsmc_jun + $d->jun_new;
+$totalsmc_jul = $totalsmc_jul + $d->jul_new;
+$totalsmc_aug = $totalsmc_aug + $d->aug_new;
+$totalsmc_sep = $totalsmc_sep + $d->sep_new;
+$totalsmc_oct = $totalsmc_oct + $d->oct_new;
+$totalsmc_nov = $totalsmc_nov + $d->nov_new;
+$totalsmc_dec = $totalsmc_dec + $d->dec_new;
+        }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OKE") {
+            $totalrjb_jan = $totalrjb_jan + $d->jan_new;
+$totalrjb_feb = $totalrjb_feb + $d->feb_new;
+$totalrjb_mar = $totalrjb_mar + $d->mar_new;
+$totalrjb_apr = $totalrjb_apr + $d->apr_new;
+$totalrjb_may = $totalrjb_may + $d->may_new;
+$totalrjb_jun = $totalrjb_jun + $d->jun_new;
+$totalrjb_jul = $totalrjb_jul + $d->jul_new;
+$totalrjb_aug = $totalrjb_aug + $d->aug_new;
+$totalrjb_sep = $totalrjb_sep + $d->sep_new;
+$totalrjb_oct = $totalrjb_oct + $d->oct_new;
+$totalrjb_nov = $totalrjb_nov + $d->nov_new;
+$totalrjb_dec = $totalrjb_dec + $d->dec_new;
+        }elseif ($d->brand == "TOG" or $d->brand == "TON" or $d->brand == "BAR" or $d->brand == "NIG") {
+            $totalrpm_jan = $totalrpm_jan + $d->jan_new;
+$totalrpm_feb = $totalrpm_feb + $d->feb_new;
+$totalrpm_mar = $totalrpm_mar + $d->mar_new;
+$totalrpm_apr = $totalrpm_apr + $d->apr_new;
+$totalrpm_may = $totalrpm_may + $d->may_new;
+$totalrpm_jun = $totalrpm_jun + $d->jun_new;
+$totalrpm_jul = $totalrpm_jul + $d->jul_new;
+$totalrpm_aug = $totalrpm_aug + $d->aug_new;
+$totalrpm_sep = $totalrpm_sep + $d->sep_new;
+$totalrpm_oct = $totalrpm_oct + $d->oct_new;
+$totalrpm_nov = $totalrpm_nov + $d->nov_new;
+$totalrpm_dec = $totalrpm_dec + $d->dec_new;
+        }
+        
+        } ?>
+        @endforeach
+        <!-- END RWI -->
         <tr>
             <td colspan="2">CUMULATIVE</td>
             <td style="text-align:right;">{{ number_format($total_year_old, 2, '.', ',') }}</td>
@@ -728,7 +841,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
         </tr>
     </table>
     <hr>
-    <!-- TABLE PER BRAND -->
+    <!-- PERHITUNGAN PER BRAND -->
     <?php
     $currentDate = new DateTime();
     $currentDate->modify('-1 month');
@@ -752,6 +865,9 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             array_map(function ($item) {
                 return json_decode(json_encode($item), true);
             }, $ptrpm),
+            array_map(function ($item) {
+                return json_decode(json_encode($item), true);
+            }, $ptrwi),
         )
         as $entry
     ) {
@@ -771,6 +887,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             $mergedArray[$brand]['oct_new'] += $entry['oct_new'];
             $mergedArray[$brand]['nov_new'] += $entry['nov_new'];
             $mergedArray[$brand]['dec_new'] += $entry['dec_new'];
+            $mergedArray[$brand]['total_new'] += $entry['total_new'];
         }
     }
     
@@ -808,6 +925,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
     });
     //END PERHITUNGAN BEDA SYSTEM SATU BRAND
     ?>
+    <!-- START TABLE ALL BRAND MONTHLY -->
     <table border="1">
         <tr>
             <!-- <td>ERP</td> -->
@@ -957,6 +1075,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             @endif
         @endforeach
     </table>
+    <!-- END TABLE ALL BRAND MONTHLY -->
     <hr>
     <table border="1">
         <tr>
@@ -1062,13 +1181,136 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             <td style="text-align:right;">
                 {{ number_format($totalsmc_dec + $totalrjb_dec + $totalrpm_dec, 2, '.', ',') }}</td>
         </tr>
-
     </table>
-
+    <hr>
+    <!-- TABLE ALL BRAND ALL SYSTEM YEARLY -->
     <table border="1">
         <tr>
-            <td></td>
+            <td>BRAND</td>
+            <td>
+                <?php
+                // Get the current month
+                $Mnow = date('n');
+                // Get the current year
+                $Ynow = date('Y');
+                $Yminone = $Ynow - 1;
+                // Check if the current month is January
+                if ($Mnow == 1) {
+                    // If it's January, echo the previous year
+                    echo 'TOTAL KUMULATIF ' . $Yminone;
+                } else {
+                    // If it's not January, echo the current year
+                    echo 'TOTAL KUMULATIF ' . $Ynow;
+                }
+                ?></td>
+            <td>
+                % TERHADAP TOTAL<br>TAHUN <?= $Mnow == 1 ? $Yminone : $Ynow ?>
+            </td>
         </tr>
+        
+        <?php
+        //ORDER DATA BRAND DESCENDING
+    usort($data_brand, function ($item1, $item2) {
+            return $item2->total_new <=> $item1->total_new; 
+    });
+    ?>
+    @foreach ($data_brand as $data)
+    @if ($data->total_new != 0)
+    <tr>
+        <td>{{$data->brand}}</td>
+        <td style="text-align:right;">{{number_format($data->total_new, 2, '.', ',')}}</td>
+        <td style="text-align:right;">{{ number_format(($data->total_new / $total_year_new * 100), 2, '.', ',') }}</td></tr>
+        @endif
+    @endforeach
+    </table>
+    <!-- END TABLE ALL BRAND ALL SYSTEM YEARLY -->
+    <hr>
+    <?php
+    // GABUNGIN ARRAY DARI BEDA SERVER JADI 1
+    // JIKA ADA BRAND YANG SAMA DARI BEDA SYSTEM MAKA DI JUMLAHKAN
+    $mergedArraySystem = [];
+    foreach (
+        array_merge(
+            array_map(function ($item) {
+                return json_decode(json_encode($item), true);
+            }, $ptsmcb),
+            array_map(function ($item) {
+                return json_decode(json_encode($item), true);
+            }, $ptseib),
+            array_map(function ($item) {
+                return json_decode(json_encode($item), true);
+            }, $ptseit),
+            array_map(function ($item) {
+                return json_decode(json_encode($item), true);
+            }, $ptrjb),
+            array_map(function ($item) {
+                return json_decode(json_encode($item), true);
+            }, $ptrpm),
+            array_map(function ($item) {
+                return json_decode(json_encode($item), true);
+            }, $ptrwi),
+        )
+        as $entry
+    ) {
+        $brand = $entry['erp'];
+        if (!isset($mergedArraySystem[$brand])) {
+            $mergedArraySystem[$brand] = $entry;
+        } else {
+            $mergedArraySystem[$brand]['jan_new'] += $entry['jan_new'];
+            $mergedArraySystem[$brand]['feb_new'] += $entry['feb_new'];
+            $mergedArraySystem[$brand]['mar_new'] += $entry['mar_new'];
+            $mergedArraySystem[$brand]['apr_new'] += $entry['apr_new'];
+            $mergedArraySystem[$brand]['may_new'] += $entry['may_new'];
+            $mergedArraySystem[$brand]['jun_new'] += $entry['jun_new'];
+            $mergedArraySystem[$brand]['jul_new'] += $entry['jul_new'];
+            $mergedArraySystem[$brand]['aug_new'] += $entry['aug_new'];
+            $mergedArraySystem[$brand]['sep_new'] += $entry['sep_new'];
+            $mergedArraySystem[$brand]['oct_new'] += $entry['oct_new'];
+            $mergedArraySystem[$brand]['nov_new'] += $entry['nov_new'];
+            $mergedArraySystem[$brand]['dec_new'] += $entry['dec_new'];
+            $mergedArraySystem[$brand]['total_new'] += $entry['total_new'];
+        }
+    }
+    $result = array_values($mergedArraySystem);
+    $data_erp = json_decode(json_encode($result));
+
+    usort($data_erp, function ($item1, $item2) {
+            return $item2->total_new <=> $item1->total_new;
+        
+    });
+    ?>
+    <table border="1">
+        <tr>
+            <td>SYSTEM</td>
+            <td>TOTAL {{date('Y')}}</td>
+            <td>% TERHADAP TOTAL KUMULATIF</td>
+            <?php
+            for($i=1;$i<=12;$i++){
+                $monthName = date('F', mktime(0, 0, 0, $i, 1));
+            ?>
+            <td>{{ strtoupper($monthName) }}</td>
+            <?php } ?>
+        </tr>
+        @foreach ($data_erp as $data)
+        <tr>
+            <td>{{$data->erp}}</td>
+            <td style="text-align:right;">{{number_format(($data->total_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{ number_format(($data->total_new / $total_year_new * 100), 2, '.', ',') }}</td>
+            <td style="text-align:right;">{{number_format(($data->jan_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->feb_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->mar_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->apr_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->may_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->jun_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->jul_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->aug_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->sep_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->oct_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->nov_new), 2, '.', ',')}}</td>
+            <td style="text-align:right;">{{number_format(($data->dec_new), 2, '.', ',')}}</td>
+        </tr>    
+        @endforeach
+        
     </table>
 </body>
 
