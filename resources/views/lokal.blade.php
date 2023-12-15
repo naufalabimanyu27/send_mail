@@ -536,43 +536,43 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
         $total_dec_old=$total_dec_old+$d->dec_old;	$total_dec_new=$total_dec_new+$d->dec_new;
         if($d->brand == "KOF" or $d->brand == "IKO" or $d->brand == "NAB" or $d->brand == "KKT" or $d->brand == "UNP" or $d->brand == "YUK"){
             $totalsmc_jan = $totalsmc_jan + $d->jan_new;
-$totalsmc_feb = $totalsmc_feb + $d->feb_new;
-$totalsmc_mar = $totalsmc_mar + $d->mar_new;
-$totalsmc_apr = $totalsmc_apr + $d->apr_new;
-$totalsmc_may = $totalsmc_may + $d->may_new;
-$totalsmc_jun = $totalsmc_jun + $d->jun_new;
-$totalsmc_jul = $totalsmc_jul + $d->jul_new;
-$totalsmc_aug = $totalsmc_aug + $d->aug_new;
-$totalsmc_sep = $totalsmc_sep + $d->sep_new;
-$totalsmc_oct = $totalsmc_oct + $d->oct_new;
-$totalsmc_nov = $totalsmc_nov + $d->nov_new;
-$totalsmc_dec = $totalsmc_dec + $d->dec_new;
+            $totalsmc_feb = $totalsmc_feb + $d->feb_new;
+            $totalsmc_mar = $totalsmc_mar + $d->mar_new;
+            $totalsmc_apr = $totalsmc_apr + $d->apr_new;
+            $totalsmc_may = $totalsmc_may + $d->may_new;
+            $totalsmc_jun = $totalsmc_jun + $d->jun_new;
+            $totalsmc_jul = $totalsmc_jul + $d->jul_new;
+            $totalsmc_aug = $totalsmc_aug + $d->aug_new;
+            $totalsmc_sep = $totalsmc_sep + $d->sep_new;
+            $totalsmc_oct = $totalsmc_oct + $d->oct_new;
+            $totalsmc_nov = $totalsmc_nov + $d->nov_new;
+            $totalsmc_dec = $totalsmc_dec + $d->dec_new;
         }elseif ($d->brand == "NOR" or $d->brand == "RIV" or $d->brand == "OKE") {
             $totalrjb_jan = $totalrjb_jan + $d->jan_new;
-$totalrjb_feb = $totalrjb_feb + $d->feb_new;
-$totalrjb_mar = $totalrjb_mar + $d->mar_new;
-$totalrjb_apr = $totalrjb_apr + $d->apr_new;
-$totalrjb_may = $totalrjb_may + $d->may_new;
-$totalrjb_jun = $totalrjb_jun + $d->jun_new;
-$totalrjb_jul = $totalrjb_jul + $d->jul_new;
-$totalrjb_aug = $totalrjb_aug + $d->aug_new;
-$totalrjb_sep = $totalrjb_sep + $d->sep_new;
-$totalrjb_oct = $totalrjb_oct + $d->oct_new;
-$totalrjb_nov = $totalrjb_nov + $d->nov_new;
-$totalrjb_dec = $totalrjb_dec + $d->dec_new;
+            $totalrjb_feb = $totalrjb_feb + $d->feb_new;
+            $totalrjb_mar = $totalrjb_mar + $d->mar_new;
+            $totalrjb_apr = $totalrjb_apr + $d->apr_new;
+            $totalrjb_may = $totalrjb_may + $d->may_new;
+            $totalrjb_jun = $totalrjb_jun + $d->jun_new;
+            $totalrjb_jul = $totalrjb_jul + $d->jul_new;
+            $totalrjb_aug = $totalrjb_aug + $d->aug_new;
+            $totalrjb_sep = $totalrjb_sep + $d->sep_new;
+            $totalrjb_oct = $totalrjb_oct + $d->oct_new;
+            $totalrjb_nov = $totalrjb_nov + $d->nov_new;
+            $totalrjb_dec = $totalrjb_dec + $d->dec_new;
         }elseif ($d->brand == "TOG" or $d->brand == "TON" or $d->brand == "BAR" or $d->brand == "NIG") {
             $totalrpm_jan = $totalrpm_jan + $d->jan_new;
-$totalrpm_feb = $totalrpm_feb + $d->feb_new;
-$totalrpm_mar = $totalrpm_mar + $d->mar_new;
-$totalrpm_apr = $totalrpm_apr + $d->apr_new;
-$totalrpm_may = $totalrpm_may + $d->may_new;
-$totalrpm_jun = $totalrpm_jun + $d->jun_new;
-$totalrpm_jul = $totalrpm_jul + $d->jul_new;
-$totalrpm_aug = $totalrpm_aug + $d->aug_new;
-$totalrpm_sep = $totalrpm_sep + $d->sep_new;
-$totalrpm_oct = $totalrpm_oct + $d->oct_new;
-$totalrpm_nov = $totalrpm_nov + $d->nov_new;
-$totalrpm_dec = $totalrpm_dec + $d->dec_new;
+            $totalrpm_feb = $totalrpm_feb + $d->feb_new;
+            $totalrpm_mar = $totalrpm_mar + $d->mar_new;
+            $totalrpm_apr = $totalrpm_apr + $d->apr_new;
+            $totalrpm_may = $totalrpm_may + $d->may_new;
+            $totalrpm_jun = $totalrpm_jun + $d->jun_new;
+            $totalrpm_jul = $totalrpm_jul + $d->jul_new;
+            $totalrpm_aug = $totalrpm_aug + $d->aug_new;
+            $totalrpm_sep = $totalrpm_sep + $d->sep_new;
+            $totalrpm_oct = $totalrpm_oct + $d->oct_new;
+            $totalrpm_nov = $totalrpm_nov + $d->nov_new;
+            $totalrpm_dec = $totalrpm_dec + $d->dec_new;
         }
         
         } ?>
@@ -888,17 +888,17 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             $mergedArray[$brand]['nov_new'] += $entry['nov_new'];
             $mergedArray[$brand]['dec_new'] += $entry['dec_new'];
             $mergedArray[$brand]['jan_old'] += $entry['jan_old'];
-$mergedArray[$brand]['feb_old'] += $entry['feb_old'];
-$mergedArray[$brand]['mar_old'] += $entry['mar_old'];
-$mergedArray[$brand]['apr_old'] += $entry['apr_old'];
-$mergedArray[$brand]['may_old'] += $entry['may_old'];
-$mergedArray[$brand]['jun_old'] += $entry['jun_old'];
-$mergedArray[$brand]['jul_old'] += $entry['jul_old'];
-$mergedArray[$brand]['aug_old'] += $entry['aug_old'];
-$mergedArray[$brand]['sep_old'] += $entry['sep_old'];
-$mergedArray[$brand]['oct_old'] += $entry['oct_old'];
-$mergedArray[$brand]['nov_old'] += $entry['nov_old'];
-$mergedArray[$brand]['dec_old'] += $entry['dec_old'];
+            $mergedArray[$brand]['feb_old'] += $entry['feb_old'];
+            $mergedArray[$brand]['mar_old'] += $entry['mar_old'];
+            $mergedArray[$brand]['apr_old'] += $entry['apr_old'];
+            $mergedArray[$brand]['may_old'] += $entry['may_old'];
+            $mergedArray[$brand]['jun_old'] += $entry['jun_old'];
+            $mergedArray[$brand]['jul_old'] += $entry['jul_old'];
+            $mergedArray[$brand]['aug_old'] += $entry['aug_old'];
+            $mergedArray[$brand]['sep_old'] += $entry['sep_old'];
+            $mergedArray[$brand]['oct_old'] += $entry['oct_old'];
+            $mergedArray[$brand]['nov_old'] += $entry['nov_old'];
+            $mergedArray[$brand]['dec_old'] += $entry['dec_old'];
             $mergedArray[$brand]['total_new'] += $entry['total_new'];
             $mergedArray[$brand]['total_old'] += $entry['total_old'];
         }
@@ -1199,42 +1199,92 @@ $mergedArray[$brand]['dec_old'] += $entry['dec_old'];
     <!-- TABLE ALL BRAND ALL SYSTEM YEARLY -->
     <table border="1" id="tabel4">
         <?php
-                // Get the current month
-                $Mnow = date('n');
-                // Get the current year
-                $Ynow = date('Y');
-                $Yminone = $Ynow - 1;
-                $Ymintwo = $Ynow - 2;
-                ?>
+        // Get the current month
+        $Mnow = date('n');
+        // Get the current year
+        $Ynow = date('Y');
+        $Yminone = $Ynow - 1;
+        $Ymintwo = $Ynow - 2;
+        ?>
         <tr>
             <td>BRAND</td>
-            <td>TOTAL <?=$Mnow == 1 ? $Ymintwo : $Yminone ?></td>
-            <td>TOTAL <?=$Mnow == 1 ? $Yminone : $Ynow ?></td>
+            <td>SMCB</td>
+            <td>SEIB</td>
+            <td>SEIT</td>
+            <td>RJB</td>
+            <td>RPM</td>
+            <td>RWI</td>
+            <td>TOTAL <?= $Mnow == 1 ? $Yminone : $Ynow ?></td>
+            <td>TOTAL <?= $Mnow == 1 ? $Ymintwo : $Yminone ?></td>
             <td>
                 % CHANGE
             </td>
         </tr>
-        
+
         <?php
         //ORDER DATA BRAND DESCENDING
-    usort($data_brand, function ($item1, $item2) {
-            return $item2->total_new <=> $item1->total_new; 
-    });
-    ?>
-    @foreach ($data_brand as $data)
-    @if ($data->total_new != 0)
-    <tr>
-        <td>{{$data->brand}}</td>
-        <td style="text-align:right;">{{number_format($data->total_old, 2, '.', ',')}}</td>
-        <td style="text-align:right;">{{number_format($data->total_new, 2, '.', ',')}}</td>
-        @if ($data->total_old != 0)
-        <td style="text-align:right;">{{ number_format((($data->total_new / $data->total_old - 1) * 100), 2, '.', ',') }}</td>
-        @else
-        <td style="text-align:right;">0</td>
-        @endif
-        </tr>
-        @endif
-    @endforeach
+        usort($data_brand, function ($item1, $item2) {
+            return $item2->total_new <=> $item1->total_new;
+        });
+        ?>
+        @foreach ($data_brand as $data)
+            @if ($data->total_new != 0)
+                <tr>
+                    <td>{{ $data->brand }}</td>
+                    <td>
+                        @foreach ( $ptsmcb as $smcb)
+                            @if ($smcb->brand == $data->brand AND $smcb->total_new != 0)
+                                {{number_format($smcb->total_new, 2, '.', ',')}}
+                            
+                            @endif
+                        @endforeach
+                    </td>
+            <td>
+                @foreach ( $ptseib as $seib)
+                            @if ($seib->brand == $data->brand AND $seib->total_new != 0)
+                                {{number_format($seib->total_new, 2, '.', ',')}}
+                            
+                            @endif
+                        @endforeach
+            </td>
+            <td>@foreach ( $ptseit as $seit)
+                @if ($seit->brand == $data->brand AND $seit->total_new != 0)
+                    {{number_format($seit->total_new, 2, '.', ',')}}
+                
+                @endif
+            @endforeach</td>
+            <td>
+                @foreach ( $ptrjb as $rjb)
+                @if ($rjb->brand == $data->brand AND $rjb->total_new != 0)
+                    {{number_format($rjb->total_new, 2, '.', ',')}}
+                
+                @endif
+            @endforeach
+            </td>
+            <td>@foreach ( $ptrpm as $rpm)
+                @if ($rpm->brand == $data->brand AND $rpm->total_new != 0)
+                    {{number_format($rpm->total_new, 2, '.', ',')}}
+                
+                @endif
+            @endforeach</td>
+            <td>@foreach ( $ptrwi as $rwi)
+                @if ($rwi->brand == $data->brand AND $rwi->total_new != 0)
+                    {{number_format($rwi->total_new, 2, '.', ',')}}
+                
+                @endif
+            @endforeach</td>
+            <td style="text-align:right;">{{ number_format($data->total_new, 2, '.', ',') }}</td>
+                    <td style="text-align:right;">{{ number_format($data->total_old, 2, '.', ',') }}</td>
+                    
+                    @if ($data->total_old != 0)
+                        <td style="text-align:right;">
+                            {{ number_format(($data->total_new / $data->total_old - 1) * 100, 2, '.', ',') }}</td>
+                    @else
+                        <td style="text-align:right;">0</td>
+                    @endif
+                </tr>
+            @endif
+        @endforeach
     </table>
     <!-- END TABLE ALL BRAND ALL SYSTEM YEARLY -->
     <hr>
@@ -1286,16 +1336,15 @@ $mergedArray[$brand]['dec_old'] += $entry['dec_old'];
     }
     $result = array_values($mergedArraySystem);
     $data_erp = json_decode(json_encode($result));
-
+    
     usort($data_erp, function ($item1, $item2) {
-            return $item2->total_new <=> $item1->total_new;
-        
+        return $item2->total_new <=> $item1->total_new;
     });
     ?>
     <table border="1" id="tabel5">
         <tr>
             <td>SYSTEM</td>
-            <td>TOTAL {{date('Y')}}</td>
+            <td>TOTAL {{ date('Y') }}</td>
             <td>% TERHADAP TOTAL KUMULATIF</td>
             <?php
             for($i=1;$i<=12;$i++){
@@ -1305,58 +1354,59 @@ $mergedArray[$brand]['dec_old'] += $entry['dec_old'];
             <?php } ?>
         </tr>
         @foreach ($data_erp as $data)
-        <tr>
-            <td>{{$data->erp}}</td>
-            <td style="text-align:right;">{{number_format(($data->total_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{ number_format(($data->total_new / $total_year_new * 100), 2, '.', ',') }}</td>
-            <td style="text-align:right;">{{number_format(($data->jan_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->feb_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->mar_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->apr_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->may_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->jun_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->jul_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->aug_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->sep_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->oct_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->nov_new), 2, '.', ',')}}</td>
-            <td style="text-align:right;">{{number_format(($data->dec_new), 2, '.', ',')}}</td>
-        </tr>    
+            <tr>
+                <td>{{ $data->erp }}</td>
+                <td style="text-align:right;">{{ number_format($data->total_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">
+                    {{ number_format(($data->total_new / $total_year_new) * 100, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->jan_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->feb_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->mar_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->apr_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->may_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->jun_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->jul_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->aug_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->sep_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->oct_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->nov_new, 2, '.', ',') }}</td>
+                <td style="text-align:right;">{{ number_format($data->dec_new, 2, '.', ',') }}</td>
+            </tr>
         @endforeach
-        
+
     </table>
     <!-- table to excel javascript -->
-<script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
-<script>
-    function exportToExcel() {
-        // Get HTML content of the tables
-        // var htmlTable1 = document.getElementById('tabel1').outerHTML;
-        // var htmlTable2 = document.getElementById('tabel2').outerHTML;
-        // var htmlTable3 = document.getElementById('tabel3').outerHTML;
-        // var htmlTable4 = document.getElementById('tabel4').outerHTML;
-        // var htmlTable5 = document.getElementById('tabel5').outerHTML;
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <script>
+        function exportToExcel() {
+            //Get HTML content of the tables
+            // var htmlTable1 = document.getElementById('tabel1').outerHTML;
+            // var htmlTable2 = document.getElementById('tabel2').outerHTML;
+            // var htmlTable3 = document.getElementById('tabel3').outerHTML;
+            // var htmlTable4 = document.getElementById('tabel4').outerHTML;
+            // var htmlTable5 = document.getElementById('tabel5').outerHTML;
 
-        // Create a workbook
-        // var wb = XLSX.utils.book_new();
+            //Create a workbook
+            // var wb = XLSX.utils.book_new();
 
-        // Convert HTML content to a worksheet
-        // var ws1 = XLSX.utils.table_to_sheet(document.getElementById('tabel1'));
-        // var ws2 = XLSX.utils.table_to_sheet(document.getElementById('tabel2'));
-        // var ws3 = XLSX.utils.table_to_sheet(document.getElementById('tabel3'));
-        // var ws4 = XLSX.utils.table_to_sheet(document.getElementById('tabel4'));
-        // var ws5 = XLSX.utils.table_to_sheet(document.getElementById('tabel5'));
+            //Convert HTML content to a worksheet
+            // var ws1 = XLSX.utils.table_to_sheet(document.getElementById('tabel1'));
+            // var ws2 = XLSX.utils.table_to_sheet(document.getElementById('tabel2'));
+            // var ws3 = XLSX.utils.table_to_sheet(document.getElementById('tabel3'));
+            // var ws4 = XLSX.utils.table_to_sheet(document.getElementById('tabel4'));
+            // var ws5 = XLSX.utils.table_to_sheet(document.getElementById('tabel5'));
 
-        // Add worksheets to the workbook
-        // XLSX.utils.book_append_sheet(wb, ws1, 'ALL DATA');
-        // XLSX.utils.book_append_sheet(wb, ws2, '<?="PER BRAND ".date("Ym")?>');
-        // XLSX.utils.book_append_sheet(wb, ws3, 'NEW PRODUCT');
-        // XLSX.utils.book_append_sheet(wb, ws4, '<?="PER BRAND CUM".date("Y")?>');
-        // XLSX.utils.book_append_sheet(wb, ws5, 'PER SYSTEM <?=date("Y")?>');
+            //Add worksheets to the workbook
+            // XLSX.utils.book_append_sheet(wb, ws1, 'ALL DATA');
+            // XLSX.utils.book_append_sheet(wb, ws2, '<?= 'PER BRAND ' . date('Ym') ?>');
+            // XLSX.utils.book_append_sheet(wb, ws3, 'NEW PRODUCT');
+            // XLSX.utils.book_append_sheet(wb, ws4, '<?= 'PER BRAND CUM' . date('Y') ?>');
+            // XLSX.utils.book_append_sheet(wb, ws5, 'PER SYSTEM <?= date('Y') ?>');
 
-        // Save the workbook to a file
-        // XLSX.writeFile(wb, 'tables.xlsx');
-    }
-</script>
+            //Save the workbook to a file
+            // XLSX.writeFile(wb, 'tables.xlsx');
+        }
+    </script>
 </body>
 
 </html>
