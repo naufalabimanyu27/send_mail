@@ -16,12 +16,16 @@ use App\Http\Controllers\SmecMailController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('mailtemplate', [MailController::class, 'index']);
 Route::get('sendhtmlemail',[SendMailController::class, 'index']);
-Route::get('/',[MailController::class,'download_excel']);
+
+/* DI COMMENT SOALNYA SUDAH DI JADIKAN LARAVEL COMMAND
+Route::get('savetodb',[MailController::class,'save_to_sql']);
+*/
+Route::get('downloadexcel',[MailController::class,'download_excel']);
 
 Route::get('mailtemplatecc', [SmecMailController::class, 'tampilan']);
 Route::get('sendmailcc', [SmecMailController::class, 'kirim']);

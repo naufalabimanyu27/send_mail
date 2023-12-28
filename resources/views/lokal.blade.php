@@ -52,7 +52,12 @@
         $totalsmc_dec = 0;
         $totalrjb_dec = 0;
         $totalrpm_dec = 0;
-        $year_now = date('Y');
+        if(date('M') == 'Jan'){
+            $year_now = date('Y') - 1;
+        }
+        else{
+            $year_now = date('Y');
+        }
         $year_old = $year_now - 1;
         ?>
         <tr>
@@ -1344,7 +1349,16 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
     <table border="1" id="tabel5">
         <tr>
             <td>SYSTEM</td>
-            <td>TOTAL {{ date('Y') }}</td>
+            <td>TOTAL
+            <?php
+            if(date('M') == 'Jan'){
+                echo " ".date('Y') - 1;
+            }
+            else{
+                echo " ".date('Y');
+            }
+            ?>
+            </td>
             <td>% TERHADAP TOTAL KUMULATIF</td>
             <?php
             for($i=1;$i<=12;$i++){
