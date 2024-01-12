@@ -158,7 +158,7 @@
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) , 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -271,7 +271,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) , 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -385,7 +385,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) , 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -499,7 +499,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) , 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -613,7 +613,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) , 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -727,7 +727,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     ?>
                 </td>
                 <td style="text-align:right;">
-                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) * 100, 2, '.', ',') : 0 ?>
+                    <?= $d->total_old != 0 ? number_format(($d->total_new / $d->total_old - 1) , 2, '.', ',') : 0 ?>
                 </td>
                 <td style="text-align:right;">{{ number_format($d->jan_old, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($d->jan_new, 2, '.', ',') }}</td>
@@ -816,7 +816,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
             <td style="text-align:right;">{{ number_format($total_year_old, 2, '.', ',') }}</td>
             <td style="text-align:right;">{{ number_format($total_year_new, 2, '.', ',') }}</td>
             <td style="text-align:right;">
-                <?= $total_year_old != 0 ? number_format(($total_year_new / $total_year_old - 1) * 100, 2, '.', ',') : 0 ?>
+                <?= $total_year_old != 0 ? number_format(($total_year_new / $total_year_old - 1) , 2, '.', ',') : 0 ?>
             </td>
             <td style="text-align:right;">{{ number_format($total_jan_old, 2, '.', ',') }}</td>
             <td style="text-align:right;">{{ number_format($total_jan_new, 2, '.', ',') }}</td>
@@ -1017,73 +1017,73 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                         ?></td>
                     <?php if ($currentDate->format('m') == '01') {
                         if ($data->jan_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->jan_new / $total_jan_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->jan_new / $total_jan_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '02') {
                         if ($data->feb_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->feb_new / $total_feb_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->feb_new / $total_feb_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '03') {
                         if ($data->mar_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->mar_new / $total_mar_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->mar_new / $total_mar_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '04') {
                         if ($data->apr_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->apr_new / $total_apr_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->apr_new / $total_apr_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '05') {
                         if ($data->may_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->may_new / $total_may_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->may_new / $total_may_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '06') {
                         if ($data->jun_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->jun_new / $total_jun_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->jun_new / $total_jun_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '07') {
                         if ($data->jul_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->jul_new / $total_jul_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->jul_new / $total_jul_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '08') {
                         if ($data->aug_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->aug_new / $total_aug_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->aug_new / $total_aug_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '09') {
                         if ($data->sep_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->sep_new / $total_sep_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->sep_new / $total_sep_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '10') {
                         if ($data->oct_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->oct_new / $total_oct_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->oct_new / $total_oct_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '11') {
                         if ($data->nov_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->nov_new / $total_nov_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->nov_new / $total_nov_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
                     } elseif ($currentDate->format('m') == '12') {
                         if ($data->dec_new != 0) {
-                            echo '<td style="text-align:right;">' . number_format(($data->dec_new / $total_dec_new) * 100, 2, '.', ',') . '</td>';
+                            echo '<td style="text-align:right;">' . number_format(($data->dec_new / $total_dec_new) , 2, '.', ',') . '</td>';
                         } else {
                             echo '<td style="text-align:right;">0</td>';
                         }
@@ -1229,7 +1229,8 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
         <?php
         //ORDER DATA BRAND DESCENDING
         usort($data_brand, function ($item1, $item2) {
-            return $item2->total_new <=> $item1->total_new;
+            // return $item2->total_new <=> $item1->total_new;
+            return $item1->brand <=> $item2->brand;
         });
         ?>
         @foreach ($data_brand as $data)
@@ -1283,7 +1284,7 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                     
                     @if ($data->total_old != 0)
                         <td style="text-align:right;">
-                            {{ number_format(($data->total_new / $data->total_old - 1) * 100, 2, '.', ',') }}</td>
+                            {{ number_format(($data->total_new / $data->total_old - 1) , 2, '.', ',') }}</td>
                     @else
                         <td style="text-align:right;">0</td>
                     @endif
@@ -1372,7 +1373,12 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
                 <td>{{ $data->erp }}</td>
                 <td style="text-align:right;">{{ number_format($data->total_new, 2, '.', ',') }}</td>
                 <td style="text-align:right;">
-                    {{ number_format(($data->total_new / $total_year_new) * 100, 2, '.', ',') }}</td>
+                @if ($total_year_new != 0)
+                {{ number_format(($data->total_new / $total_year_new) , 2, '.', ',') }}
+                @else
+                    0                    
+                @endif
+                    </td>
                 <td style="text-align:right;">{{ number_format($data->jan_new, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($data->feb_new, 2, '.', ',') }}</td>
                 <td style="text-align:right;">{{ number_format($data->mar_new, 2, '.', ',') }}</td>
@@ -1391,36 +1397,36 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
     </table>
     <!-- table to excel javascript -->
     <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
-    <script>
+    <!--<script>
         function exportToExcel() {
             //Get HTML content of the tables
-            // var htmlTable1 = document.getElementById('tabel1').outerHTML;
-            // var htmlTable2 = document.getElementById('tabel2').outerHTML;
-            // var htmlTable3 = document.getElementById('tabel3').outerHTML;
-            // var htmlTable4 = document.getElementById('tabel4').outerHTML;
-            // var htmlTable5 = document.getElementById('tabel5').outerHTML;
+            var htmlTable1 = document.getElementById('tabel1').outerHTML;
+            var htmlTable2 = document.getElementById('tabel2').outerHTML;
+            var htmlTable3 = document.getElementById('tabel3').outerHTML;
+            var htmlTable4 = document.getElementById('tabel4').outerHTML;
+            var htmlTable5 = document.getElementById('tabel5').outerHTML;
 
             //Create a workbook
-            // var wb = XLSX.utils.book_new();
+            var wb = XLSX.utils.book_new();
 
             //Convert HTML content to a worksheet
-            // var ws1 = XLSX.utils.table_to_sheet(document.getElementById('tabel1'));
-            // var ws2 = XLSX.utils.table_to_sheet(document.getElementById('tabel2'));
-            // var ws3 = XLSX.utils.table_to_sheet(document.getElementById('tabel3'));
-            // var ws4 = XLSX.utils.table_to_sheet(document.getElementById('tabel4'));
-            // var ws5 = XLSX.utils.table_to_sheet(document.getElementById('tabel5'));
+            var ws1 = XLSX.utils.table_to_sheet(document.getElementById('tabel1'));
+            var ws2 = XLSX.utils.table_to_sheet(document.getElementById('tabel2'));
+            var ws3 = XLSX.utils.table_to_sheet(document.getElementById('tabel3'));
+            var ws4 = XLSX.utils.table_to_sheet(document.getElementById('tabel4'));
+            var ws5 = XLSX.utils.table_to_sheet(document.getElementById('tabel5'));
 
             //Add worksheets to the workbook
-            // XLSX.utils.book_append_sheet(wb, ws1, 'ALL DATA');
-            // XLSX.utils.book_append_sheet(wb, ws2, '<?= 'PER BRAND ' . date('Ym') ?>');
-            // XLSX.utils.book_append_sheet(wb, ws3, 'NEW PRODUCT');
-            // XLSX.utils.book_append_sheet(wb, ws4, '<?= 'PER BRAND CUM' . date('Y') ?>');
-            // XLSX.utils.book_append_sheet(wb, ws5, 'PER SYSTEM <?= date('Y') ?>');
+            XLSX.utils.book_append_sheet(wb, ws1, 'ALL DATA');
+            XLSX.utils.book_append_sheet(wb, ws2, '<?= 'PER BRAND ' . date('Ym') ?>');
+            XLSX.utils.book_append_sheet(wb, ws3, 'NEW PRODUCT');
+            XLSX.utils.book_append_sheet(wb, ws4, '<?= 'PER BRAND CUM' . date('Y') ?>');
+            XLSX.utils.book_append_sheet(wb, ws5, 'PER SYSTEM <?= date('Y') ?>');
 
             //Save the workbook to a file
-            // XLSX.writeFile(wb, 'tables.xlsx');
+            XLSX.writeFile(wb, 'tables.xlsx');
         }
-    </script>
+    </script>-->
 </body>
 
 </html>

@@ -10,6 +10,7 @@ class Kernel extends ConsoleKernel
 
     protected $commands = [
         \App\Console\Commands\InsertSQLERP::class,
+        \App\Console\Commands\KirimEmail::class,
     ];
 
     /**
