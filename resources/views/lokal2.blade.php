@@ -508,7 +508,7 @@
     
     <!-- table to excel javascript -->
     <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
-    <!--<script>
+    <script>
         function exportToExcel() {
             //Get HTML content of the tables
             var htmlTable1 = document.getElementById('tabel1').outerHTML;
@@ -537,7 +537,7 @@
             //Save the workbook to a file
             XLSX.writeFile(wb, 'tables.xlsx');
         }
-    </script>-->
+    </script>
 </body>
 
 </html>
