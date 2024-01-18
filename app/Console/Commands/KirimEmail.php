@@ -60,39 +60,39 @@ class KirimEmail extends Command
         );
         // END PENGIRIMAN DATA -1 BULAN
 
-        // Mail::send(
-        //     "lokal",
-        //     compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
-        //     function ($message) {
-        //         $message
-        //             ->to("jap.spencer@gmail.com", "DATA")
-        //             ->subject("REPORT");
-        //         $message
-        //             ->to("abrahambudiman@gmail.com", "DATA")
-        //             ->subject("REPORT");
-        //         $message
-        //             ->to("yohanjnt@riyadi.co.id", "DATA")
-        //             ->subject("REPORT");
-        //         $message->from("helpdesk@riyadi.co.id", "SYSTEM");
-        //     }
-        // );
-        // Mail::send(
-        //     "lokal",
-        //     compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
-        //     function ($message) {
-        //         $message
-        //             ->to("Lisadaryono@gmail.com", "DATA")
-        //             ->subject("REPORT");
-        //         $message->from("helpdesk@riyadi.co.id", "SYSTEM");
-        //     }
-        // );
         Mail::send(
             "lokal",
             compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
             function ($message) {
-                // $message
-                //     ->to("arif@smcindonesia.com", "ARIF")
-                //     ->subject("REPORT");
+                $message
+                    ->to("jap.spencer@gmail.com", "DATA")
+                    ->subject("REPORT");
+                $message
+                    ->to("abrahambudiman@gmail.com", "DATA")
+                    ->subject("REPORT");
+                $message
+                    ->to("yohanjnt@riyadi.co.id", "DATA")
+                    ->subject("REPORT");
+                $message->from("helpdesk@riyadi.co.id", "SYSTEM");
+            }
+        );
+        Mail::send(
+            "lokal",
+            compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
+            function ($message) {
+                $message
+                    ->to("Lisadaryono@gmail.com", "DATA")
+                    ->subject("REPORT");
+                $message->from("helpdesk@riyadi.co.id", "SYSTEM");
+            }
+        );
+        Mail::send(
+            "lokal",
+            compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
+            function ($message) {
+                $message
+                    ->to("arif@smcindonesia.com", "ARIF")
+                    ->subject("REPORT");
                 $message
                     ->to("naufal@smcindonesia.com", "NAUFAL")
                     ->subject("REPORT");

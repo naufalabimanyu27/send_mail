@@ -14,6 +14,8 @@
 </head>
 
 <body onload="exportToExcel()">
+    <h3>LINK DOWNLOAD EXCEL : <a href="https://sendmailoracle.riyadi.co.id/downloadexcel">https://sendmailoracle.riyadi.co.id/downloadexcel</a></h3>
+    <p>*Data on this link will only available for 1 week</p>
     <table border="1" id="tabel1">
         <?php
         $totalsmc_jan = 0;
@@ -915,31 +917,32 @@ $totalrpm_dec = $totalrpm_dec + $d->dec_new;
     usort($data_brand, function ($item1, $item2) {
         $currentDate = new DateTime();
         $currentDate->modify('-1 month');
-        if ($currentDate->format('m') == '01') {
-            return $item2->jan_new <=> $item1->jan_new;
-        } elseif ($currentDate->format('m') == '02') {
-            return $item2->feb_new <=> $item1->feb_new;
-        } elseif ($currentDate->format('m') == '03') {
-            return $item2->mar_new <=> $item1->mar_new;
-        } elseif ($currentDate->format('m') == '04') {
-            return $item2->apr_new <=> $item1->apr_new;
-        } elseif ($currentDate->format('m') == '05') {
-            return $item2->may_new <=> $item1->may_new;
-        } elseif ($currentDate->format('m') == '06') {
-            return $item2->jun_new <=> $item1->jun_new;
-        } elseif ($currentDate->format('m') == '07') {
-            return $item2->jul_new <=> $item1->jul_new;
-        } elseif ($currentDate->format('m') == '08') {
-            return $item2->aug_new <=> $item1->aug_new;
-        } elseif ($currentDate->format('m') == '09') {
-            return $item2->sep_new <=> $item1->sep_new;
-        } elseif ($currentDate->format('m') == '10') {
-            return $item2->oct_new <=> $item1->oct_new;
-        } elseif ($currentDate->format('m') == '11') {
-            return $item2->nov_new <=> $item1->nov_new;
-        } elseif ($currentDate->format('m') == '12') {
-            return $item2->dec_new <=> $item1->dec_new;
-        }
+        // if ($currentDate->format('m') == '01') {
+        //     return $item2->jan_new <=> $item1->jan_new;
+        // } elseif ($currentDate->format('m') == '02') {
+        //     return $item2->feb_new <=> $item1->feb_new;
+        // } elseif ($currentDate->format('m') == '03') {
+        //     return $item2->mar_new <=> $item1->mar_new;
+        // } elseif ($currentDate->format('m') == '04') {
+        //     return $item2->apr_new <=> $item1->apr_new;
+        // } elseif ($currentDate->format('m') == '05') {
+        //     return $item2->may_new <=> $item1->may_new;
+        // } elseif ($currentDate->format('m') == '06') {
+        //     return $item2->jun_new <=> $item1->jun_new;
+        // } elseif ($currentDate->format('m') == '07') {
+        //     return $item2->jul_new <=> $item1->jul_new;
+        // } elseif ($currentDate->format('m') == '08') {
+        //     return $item2->aug_new <=> $item1->aug_new;
+        // } elseif ($currentDate->format('m') == '09') {
+        //     return $item2->sep_new <=> $item1->sep_new;
+        // } elseif ($currentDate->format('m') == '10') {
+        //     return $item2->oct_new <=> $item1->oct_new;
+        // } elseif ($currentDate->format('m') == '11') {
+        //     return $item2->nov_new <=> $item1->nov_new;
+        // } elseif ($currentDate->format('m') == '12') {
+        //     return $item2->dec_new <=> $item1->dec_new;
+        // }
+        return $item1->brand <=> $item2->brand;
     });
     //END PERHITUNGAN BEDA SYSTEM SATU BRAND
     ?>

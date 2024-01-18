@@ -9,8 +9,10 @@
     </style>
 </head>
 
-<body>
-    <table class="table table-striped">
+<body onload="exportToExcel()">
+    <h3>Open this link to download the excel : <a href="https://sendmailoracle.riyadi.co.id/mailexcel/<?php echo e($email); ?>" target="_blank">https://sendmailoracle.riyadi.co.id/mailexcel/<?php echo e($email); ?></a></h3>
+    <p>*Data on this link will only available for 1 week</p>
+    <table class="table table-striped" id="tabel1">
         <thead class="thead-dark">
             <tr style="border: 1px solid;">
                 <th style="border: 1px solid;">SQ NO</th>
@@ -50,6 +52,26 @@
             </tr>
         </tbody>
     </table>
+    <!-- table to excel javascript -->
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <script>
+        function exportToExcel() {
+            //Get HTML content of the tables
+            var htmlTable1 = document.getElementById('tabel1').outerHTML;
+
+            //Create a workbook
+            var wb = XLSX.utils.book_new();
+
+            //Convert HTML content to a worksheet
+            var ws1 = XLSX.utils.table_to_sheet(document.getElementById('tabel1'));
+
+            //Add worksheets to the workbook
+            XLSX.utils.book_append_sheet(wb, ws1, 'DATA');
+
+            //Save the workbook to a file
+            XLSX.writeFile(wb, 'tables.xlsx');
+        }
+    </script>
 </body>
 
 </html><?php /**PATH C:\xampp\htdocs\send_mail\resources\views/mail.blade.php ENDPATH**/ ?>
