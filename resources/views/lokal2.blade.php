@@ -244,67 +244,133 @@
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->jan_new}}</td>
-            <td>{{$cum_jan_new}}</td>
+            <td>
+                @if ($cum_jan_new !=0)
+                    {{$d->jan_new / $cum_jan_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '02' and $d->feb_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->feb_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_feb_new !=0)
+                    {{$d->feb_new / $cum_feb_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '03' and $d->mar_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->mar_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_mar_new !=0)
+                    {{$d->mar_new / $cum_mar_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '04' and $d->apr_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->apr_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_apr_new !=0)
+                    {{$d->apr_new / $cum_apr_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '05' and $d->may_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->may_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_may_new !=0)
+                    {{$d->may_new / $cum_may_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '06' and $d->jun_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->jun_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_jun_new !=0)
+                    {{$d->jun_new / $cum_jun_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '07' and $d->jul_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->jul_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_jul_new !=0)
+                    {{$d->jul_new / $cum_jul_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '08' and $d->aug_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->aug_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_aug_new !=0)
+                    {{$d->aug_new / $cum_aug_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '09' and $d->sep_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->sep_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_sep_new !=0)
+                    {{$d->sep_new / $cum_sep_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '10' and $d->oct_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->oct_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_oct_new !=0)
+                    {{$d->oct_new / $cum_oct_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '11' and $d->nov_new != 0)
         <tr>
             <td>{{$d->brand}}</td>
             <td>{{$d->nov_new}}</td>
-            <td>{{$d->brand}}</td>
+            <td>
+                @if ($cum_nov_new !=0)
+                    {{$d->nov_new / $cum_nov_new}}
+                @else
+                    0
+                @endif
+            </td>
         </tr>
         @elseif($currentDate->format('m') == '12' and $d->dec_new != 0)
         <tr>
