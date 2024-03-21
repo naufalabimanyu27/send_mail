@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use App\Models\Netsale_Mod;
 
 class KirimEmail extends Command
 {
@@ -60,32 +61,170 @@ class KirimEmail extends Command
         );
         // END PENGIRIMAN DATA -1 BULAN
 
-        Mail::send(
-            "lokal",
-            compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
-            function ($message) {
-                $message
-                    ->to("jap.spencer@gmail.com", "DATA")
-                    ->subject("REPORT");
-                $message
-                    ->to("abrahambudiman@gmail.com", "DATA")
-                    ->subject("REPORT");
-                $message
-                    ->to("yohanjnt@riyadi.co.id", "DATA")
-                    ->subject("REPORT");
-                $message->from("helpdesk@riyadi.co.id", "SYSTEM");
-            }
-        );
-        Mail::send(
-            "lokal",
-            compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
-            function ($message) {
-                $message
-                    ->to("Lisadaryono@gmail.com", "DATA")
-                    ->subject("REPORT");
-                $message->from("helpdesk@riyadi.co.id", "SYSTEM");
-            }
-        );
+        // START SAVE DATA TO MYSQL
+        DB::table('v_brand_netsale')->delete();
+        // $data_netsale->delete();
+        //SMCB
+        $isidata = '';
+        $isidata = array();
+        foreach ($ptsmcb as $d) {
+            $isidata['erp'] = $d->erp;
+            $isidata['brand'] = $d->brand;
+            $isidata['tahun_old'] = $d->tahun_old;	$isidata['tahun_new'] = $d->tahun_new;
+            $isidata['total_old'] = $d->total_old;	$isidata['total_new'] = $d->total_new;
+            $isidata['jan_old'] = $d->jan_old;	$isidata['jan_new'] = $d->jan_new;
+            $isidata['feb_old'] = $d->feb_old;	$isidata['feb_new'] = $d->feb_new;
+            $isidata['mar_old'] = $d->mar_old;	$isidata['mar_new'] = $d->mar_new;
+            $isidata['apr_old'] = $d->apr_old;	$isidata['apr_new'] = $d->apr_new;
+            $isidata['may_old'] = $d->may_old;	$isidata['may_new'] = $d->may_new;
+            $isidata['jun_old'] = $d->jun_old;	$isidata['jun_new'] = $d->jun_new;
+            $isidata['jul_old'] = $d->jul_old;	$isidata['jul_new'] = $d->jul_new;
+            $isidata['aug_old'] = $d->aug_old;	$isidata['aug_new'] = $d->aug_new;
+            $isidata['sep_old'] = $d->sep_old;	$isidata['sep_new'] = $d->sep_new;
+            $isidata['oct_old'] = $d->oct_old;	$isidata['oct_new'] = $d->oct_new;
+            $isidata['nov_old'] = $d->nov_old;	$isidata['nov_new'] = $d->nov_new;
+            $isidata['dec_old'] = $d->dec_old;	$isidata['dec_new'] = $d->dec_new;
+            Netsale_Mod::create($isidata);
+        }
+        //SEIB
+        $isidata = '';
+        $isidata = array();
+        foreach ($ptseib as $d) {
+            $isidata['erp'] = $d->erp;
+            $isidata['brand'] = $d->brand;
+            $isidata['tahun_old'] = $d->tahun_old;	$isidata['tahun_new'] = $d->tahun_new;
+            $isidata['total_old'] = $d->total_old;	$isidata['total_new'] = $d->total_new;
+            $isidata['jan_old'] = $d->jan_old;	$isidata['jan_new'] = $d->jan_new;
+            $isidata['feb_old'] = $d->feb_old;	$isidata['feb_new'] = $d->feb_new;
+            $isidata['mar_old'] = $d->mar_old;	$isidata['mar_new'] = $d->mar_new;
+            $isidata['apr_old'] = $d->apr_old;	$isidata['apr_new'] = $d->apr_new;
+            $isidata['may_old'] = $d->may_old;	$isidata['may_new'] = $d->may_new;
+            $isidata['jun_old'] = $d->jun_old;	$isidata['jun_new'] = $d->jun_new;
+            $isidata['jul_old'] = $d->jul_old;	$isidata['jul_new'] = $d->jul_new;
+            $isidata['aug_old'] = $d->aug_old;	$isidata['aug_new'] = $d->aug_new;
+            $isidata['sep_old'] = $d->sep_old;	$isidata['sep_new'] = $d->sep_new;
+            $isidata['oct_old'] = $d->oct_old;	$isidata['oct_new'] = $d->oct_new;
+            $isidata['nov_old'] = $d->nov_old;	$isidata['nov_new'] = $d->nov_new;
+            $isidata['dec_old'] = $d->dec_old;	$isidata['dec_new'] = $d->dec_new;
+            Netsale_Mod::create($isidata);
+        }
+        //SEIT
+        $isidata = '';
+        $isidata = array();
+        foreach ($ptseit as $d) {
+            $isidata['erp'] = $d->erp;
+            $isidata['brand'] = $d->brand;
+            $isidata['tahun_old'] = $d->tahun_old;	$isidata['tahun_new'] = $d->tahun_new;
+            $isidata['total_old'] = $d->total_old;	$isidata['total_new'] = $d->total_new;
+            $isidata['jan_old'] = $d->jan_old;	$isidata['jan_new'] = $d->jan_new;
+            $isidata['feb_old'] = $d->feb_old;	$isidata['feb_new'] = $d->feb_new;
+            $isidata['mar_old'] = $d->mar_old;	$isidata['mar_new'] = $d->mar_new;
+            $isidata['apr_old'] = $d->apr_old;	$isidata['apr_new'] = $d->apr_new;
+            $isidata['may_old'] = $d->may_old;	$isidata['may_new'] = $d->may_new;
+            $isidata['jun_old'] = $d->jun_old;	$isidata['jun_new'] = $d->jun_new;
+            $isidata['jul_old'] = $d->jul_old;	$isidata['jul_new'] = $d->jul_new;
+            $isidata['aug_old'] = $d->aug_old;	$isidata['aug_new'] = $d->aug_new;
+            $isidata['sep_old'] = $d->sep_old;	$isidata['sep_new'] = $d->sep_new;
+            $isidata['oct_old'] = $d->oct_old;	$isidata['oct_new'] = $d->oct_new;
+            $isidata['nov_old'] = $d->nov_old;	$isidata['nov_new'] = $d->nov_new;
+            $isidata['dec_old'] = $d->dec_old;	$isidata['dec_new'] = $d->dec_new;
+            Netsale_Mod::create($isidata);
+        }
+        //RJB
+        $isidata = '';
+        $isidata = array();
+        foreach ($ptrjb as $d) {
+            $isidata['erp'] = $d->erp;
+            $isidata['brand'] = $d->brand;
+            $isidata['tahun_old'] = $d->tahun_old;	$isidata['tahun_new'] = $d->tahun_new;
+            $isidata['total_old'] = $d->total_old;	$isidata['total_new'] = $d->total_new;
+            $isidata['jan_old'] = $d->jan_old;	$isidata['jan_new'] = $d->jan_new;
+            $isidata['feb_old'] = $d->feb_old;	$isidata['feb_new'] = $d->feb_new;
+            $isidata['mar_old'] = $d->mar_old;	$isidata['mar_new'] = $d->mar_new;
+            $isidata['apr_old'] = $d->apr_old;	$isidata['apr_new'] = $d->apr_new;
+            $isidata['may_old'] = $d->may_old;	$isidata['may_new'] = $d->may_new;
+            $isidata['jun_old'] = $d->jun_old;	$isidata['jun_new'] = $d->jun_new;
+            $isidata['jul_old'] = $d->jul_old;	$isidata['jul_new'] = $d->jul_new;
+            $isidata['aug_old'] = $d->aug_old;	$isidata['aug_new'] = $d->aug_new;
+            $isidata['sep_old'] = $d->sep_old;	$isidata['sep_new'] = $d->sep_new;
+            $isidata['oct_old'] = $d->oct_old;	$isidata['oct_new'] = $d->oct_new;
+            $isidata['nov_old'] = $d->nov_old;	$isidata['nov_new'] = $d->nov_new;
+            $isidata['dec_old'] = $d->dec_old;	$isidata['dec_new'] = $d->dec_new;
+            Netsale_Mod::create($isidata);
+        }
+        //RPM
+        $isidata = '';
+        $isidata = array();
+        foreach ($ptrpm as $d) {
+            $isidata['erp'] = $d->erp;
+            $isidata['brand'] = $d->brand;
+            $isidata['tahun_old'] = $d->tahun_old;	$isidata['tahun_new'] = $d->tahun_new;
+            $isidata['total_old'] = $d->total_old;	$isidata['total_new'] = $d->total_new;
+            $isidata['jan_old'] = $d->jan_old;	$isidata['jan_new'] = $d->jan_new;
+            $isidata['feb_old'] = $d->feb_old;	$isidata['feb_new'] = $d->feb_new;
+            $isidata['mar_old'] = $d->mar_old;	$isidata['mar_new'] = $d->mar_new;
+            $isidata['apr_old'] = $d->apr_old;	$isidata['apr_new'] = $d->apr_new;
+            $isidata['may_old'] = $d->may_old;	$isidata['may_new'] = $d->may_new;
+            $isidata['jun_old'] = $d->jun_old;	$isidata['jun_new'] = $d->jun_new;
+            $isidata['jul_old'] = $d->jul_old;	$isidata['jul_new'] = $d->jul_new;
+            $isidata['aug_old'] = $d->aug_old;	$isidata['aug_new'] = $d->aug_new;
+            $isidata['sep_old'] = $d->sep_old;	$isidata['sep_new'] = $d->sep_new;
+            $isidata['oct_old'] = $d->oct_old;	$isidata['oct_new'] = $d->oct_new;
+            $isidata['nov_old'] = $d->nov_old;	$isidata['nov_new'] = $d->nov_new;
+            $isidata['dec_old'] = $d->dec_old;	$isidata['dec_new'] = $d->dec_new;
+            Netsale_Mod::create($isidata);
+        }
+        //RWI
+        $isidata = '';
+        $isidata = array();
+        foreach ($ptrwi as $d) {
+            $isidata['erp'] = $d->erp;
+            $isidata['brand'] = $d->brand;
+            $isidata['tahun_old'] = $d->tahun_old;	$isidata['tahun_new'] = $d->tahun_new;
+            $isidata['total_old'] = $d->total_old;	$isidata['total_new'] = $d->total_new;
+            $isidata['jan_old'] = $d->jan_old;	$isidata['jan_new'] = $d->jan_new;
+            $isidata['feb_old'] = $d->feb_old;	$isidata['feb_new'] = $d->feb_new;
+            $isidata['mar_old'] = $d->mar_old;	$isidata['mar_new'] = $d->mar_new;
+            $isidata['apr_old'] = $d->apr_old;	$isidata['apr_new'] = $d->apr_new;
+            $isidata['may_old'] = $d->may_old;	$isidata['may_new'] = $d->may_new;
+            $isidata['jun_old'] = $d->jun_old;	$isidata['jun_new'] = $d->jun_new;
+            $isidata['jul_old'] = $d->jul_old;	$isidata['jul_new'] = $d->jul_new;
+            $isidata['aug_old'] = $d->aug_old;	$isidata['aug_new'] = $d->aug_new;
+            $isidata['sep_old'] = $d->sep_old;	$isidata['sep_new'] = $d->sep_new;
+            $isidata['oct_old'] = $d->oct_old;	$isidata['oct_new'] = $d->oct_new;
+            $isidata['nov_old'] = $d->nov_old;	$isidata['nov_new'] = $d->nov_new;
+            $isidata['dec_old'] = $d->dec_old;	$isidata['dec_new'] = $d->dec_new;
+            Netsale_Mod::create($isidata);
+        }
+        // END SAVE DATA TO MYSQL
+
+        // START SEND MAIL
+        // Mail::send(
+        //     "lokal",
+        //     compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
+        //     function ($message) {
+        //         $message
+        //             ->to("jap.spencer@gmail.com", "DATA")
+        //             ->subject("REPORT");
+        //         $message
+        //             ->to("abrahambudiman@gmail.com", "DATA")
+        //             ->subject("REPORT");
+        //         $message
+        //             ->to("yohanjnt@riyadi.co.id", "DATA")
+        //             ->subject("REPORT");
+        //         $message->from("helpdesk@riyadi.co.id", "SYSTEM");
+        //     }
+        // );
+        // Mail::send(
+        //     "lokal",
+        //     compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
+        //     function ($message) {
+        //         $message
+        //             ->to("Lisadaryono@gmail.com", "DATA")
+        //             ->subject("REPORT");
+        //         $message->from("helpdesk@riyadi.co.id", "SYSTEM");
+        //     }
+        // );
         Mail::send(
             "lokal",
             compact("ptsmcb", "ptseib", "ptseit", "ptrjb", "ptrpm","ptrwi"),
@@ -102,7 +241,7 @@ class KirimEmail extends Command
                 $message->from("helpdesk@riyadi.co.id", "SYSTEM");
             }
         );
-
+        // END SEND MAIL
         $this->info('Email sucessfully sended!');
     }
 }

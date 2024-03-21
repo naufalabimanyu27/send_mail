@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use App\Models\SQ_NotApproved_Mod;
 
 class SendEmailMY extends Command
 {
@@ -39,7 +40,34 @@ class SendEmailMY extends Command
      */
     public function handle()
     {
-        
+        $smec = DB::connection('SMEC')->select(
+            "
+            SELECT 
+            *
+            FROM V_SQ_NOTAPPROVED
+            "
+        );
+        DB::table('v_sq_notapproved')->delete();
+        //SMEC
+        $isidata = '';
+        $isidata = array();
+        foreach ($smec as $d) {
+            $isidata['sq_no'] = $d->sq_no;
+            $isidata['sq_date'] = $d->sq_date;
+            $isidata['sq_month'] = $d->sq_month;
+            $isidata['sq_cust'] = $d->sq_cust;
+            $isidata['cust_city'] = $d->cust_city;
+            $isidata['sq_value'] = $d->sq_value;
+            $isidata['sq_fnished'] = $d->sq_fnished;
+            $isidata['sq_approved'] = $d->sq_approved;
+            $isidata['sq_sales'] = $d->sq_sales;
+            $isidata['sq_po'] = $d->sq_po;
+            $isidata['sales_email'] = $d->sales_email;
+            $isidata['sales_cc'] = $d->sales_cc;
+            SQ_NotApproved_Mod::create($isidata);
+        }
+        $this->info('Save to SQL executed successfully!');
+
         // $data_list_email = DB::connection('SMEC')->select("
         //         SELECT DISTINCT SALES_EMAIL,SALES_CC FROM
         // (SELECT 
@@ -68,6 +96,7 @@ class SendEmailMY extends Command
         // FROM V_SQ_NOTAPPROVED)A
         //         ");
         $data_list_email = DB::connection('SMEC')->select("SELECT DISTINCT SALES_EMAIL,SALES_CC FROM V_SQ_NOTAPPROVED WHERE SALES_EMAIL is not null");
+        
         foreach ($data_list_email as $list_email) {
             // $data = DB::connection('SMEC')->select("
             //     SELECT * FROM(SELECT 
