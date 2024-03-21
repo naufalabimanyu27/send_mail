@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\SmecMailController;
+use App\Http\Controllers\SmecLokalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::get('/', function () {
 Route::get('mailtemplate', [MailController::class, 'index']);
 Route::get('sendhtmlemail',[SendMailController::class, 'index']);
 Route::get('downloadexcel',[MailController::class,'download_excel']);
+
+Route::get('smeclokaltemplate',[SmecLokalController::class,'index']);
 
 
 Route::get('mailexcel/{sales}', [SmecMailController::class, 'tampilan']);
