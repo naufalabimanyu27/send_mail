@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use App\Models\Vnet_Mod;
 
 class SmecLokalController extends Controller
 {
@@ -15,7 +16,47 @@ class SmecLokalController extends Controller
      */
     public function index()
     {
-        return view('smec');
+        //BRAND
+        $query='type';
+        $loopperiode = array();
+        for ($i=12; $i >= 1 ; $i--) { 
+            $periode = date("Ym", strtotime("-".$i." months"));
+            $periodetext = date("M-Y", strtotime("-".$i." months"));
+            $query .= ", SUM(CASE WHEN DATE_FORMAT(dsi_date,'%Y%m') = '".$periode."' THEN net_dpp ELSE 0 END) m".$i;
+            $loopperiode[] = $periodetext;
+        }
+        $data_brand = Vnet_Mod::select(DB::raw($query))
+                ->groupBy('type')
+                ->get();
+
+        //SALES
+        $query='sales';
+        $loopperiode = array();
+        for ($i=12; $i >= 1 ; $i--) { 
+            $periode = date("Ym", strtotime("-".$i." months"));
+            $periodetext = date("M-Y", strtotime("-".$i." months"));
+            $query .= ", SUM(CASE WHEN DATE_FORMAT(dsi_date,'%Y%m') = '".$periode."' THEN net_dpp ELSE 0 END) m".$i;
+            $loopperiode[] = $periodetext;
+        }
+        $data_sales = Vnet_Mod::select(DB::raw($query))
+                ->groupBy('sales')
+                ->get();
+
+        //CUSTOMER
+        $query='customer';
+        $loopperiode = array();
+        for ($i=12; $i >= 1 ; $i--) { 
+            $periode = date("Ym", strtotime("-".$i." months"));
+            $periodetext = date("M-Y", strtotime("-".$i." months"));
+            $query .= ", SUM(CASE WHEN DATE_FORMAT(dsi_date,'%Y%m') = '".$periode."' THEN net_dpp ELSE 0 END) m".$i;
+            $loopperiode[] = $periodetext;
+        }
+        $data_customer = Vnet_Mod::select(DB::raw($query))
+                ->groupBy('customer')
+                ->get();
+
+        return view('smec',compact('data_customer','data_sales','data_brand','loopperiode'));
+
     }
 
     /**
